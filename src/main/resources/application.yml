@@ -1,0 +1,33 @@
+server:
+  port: 8833
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles: 
+    active: dev
+  http:
+    multipart:
+      max-file-size: 30Mb
+      max-request-size: 30Mb
+  devtools:
+    restart:
+      enabled: true    
+mybatis: 
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mybatis/**/*Mapper.xml
+  typeAliasesPackage: com.bootdo.**.domain
+
+wechat:
+  miniapp:
+    appid: wxd98ba2c12f616fc7
+    secret: 6d6f2735cf9c9283f41db21ef293878d
+    token: weixin
+    aesKey: 111
+    msgDataFormat: JSON
