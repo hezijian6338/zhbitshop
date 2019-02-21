@@ -27,6 +27,7 @@ import com.bootdo.common.utils.R;
  * @author zscat
  * @email 951449465@qq.com
  * @date 2017-10-18 13:12:04
+ * coupon 是赠卷信息
  */
  
 @Controller
