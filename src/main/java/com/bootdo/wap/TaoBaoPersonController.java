@@ -22,6 +22,7 @@ import com.bootdo.shop.service.TGoodsService;
 import com.bootdo.shop.service.TGoodsTypeService;
 import com.bootdo.shop.service.TMemberService;
 import com.bootdo.shop.service.TOrderService;
+import com.bootdo.utils.ChangePageUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -81,8 +82,15 @@ public class TaoBaoPersonController {
 	        try {
 	            ModelAndView model = new ModelAndView("/taobao/self");
 				TMemberDO member= MemberUtils.getSessionLoginUser();
-				model.addObject("member", member);
-	            return model;
+//				如果member为空 转入登录页面
+				if(member == null)
+				{
+					ModelAndView model1 = new ModelAndView("taobao/login");
+					return model1;
+				}else {
+					model.addObject("member", member);
+					return model;
+				}
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	            throw new RuntimeException("导航失败!");
