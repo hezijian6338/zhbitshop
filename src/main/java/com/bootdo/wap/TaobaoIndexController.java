@@ -360,6 +360,15 @@ public class TaobaoIndexController {
 			request.getSession().invalidate();
 			return "redirect:/taobao/login";
 		}
-	
+
+		/**
+		 * 转到佣金页面
+		 *
+		 * @return 跳转到佣金页面
+		 */
+		@RequestMapping("fxcenter1")
+		public String fxcenter(){
+			return "/taobao/fx-center1";
+		}
 
 }
