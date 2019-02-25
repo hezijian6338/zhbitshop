@@ -184,12 +184,9 @@ public class TaoBaoPersonController {
 	  */
 	 @RequestMapping("/information")
 	  public ModelAndView information() {
-		 ModelAndView model = new ModelAndView("/taobao/information");
+		 ModelAndView model = new ModelAndView("/taobao/datum");
 		 TMemberDO member=MemberUtils.getSessionLoginUser();
          model.addObject("member", member);
-		 
-         
-		 
 		 return model;
 	 }
 	  /**

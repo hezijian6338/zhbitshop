@@ -44,15 +44,15 @@
 			<li>
 				<a href="#">
 					<p>头像</p>
-					<span><img src="/taobao/images/right.png"/></span>
-					<figure><img src="/taobao/images/detail-tou.png"/></figure>
+					<span><img th:src="@{'/upload/member/'+${member.img}}"/></span>
+					<!--<figure><img src="/taobao/images/detail-tou.png"/></figure>-->
 				</a>
 			</li>
 			<li>
 				<a href="namechange.html">
 					<p>昵称</p>
-					<span><img src="/taobao/images/right.png"/></span>
-					<small>瑾晨</small>
+					<span><p class="name" th:text="${member.username}">Guoguo</p></span>
+					<!--<small>瑾晨</small>-->
 					
 				</a>
 			</li>
