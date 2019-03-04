@@ -371,4 +371,51 @@ public class TaobaoIndexController {
 			return "/taobao/fx-center1";
 		}
 
+		/**
+		 * 修改密码
+		 * @param password
+		 * @param username
+		 * @param passwordRepeat
+		 * @param request
+		 * @return
+		 */
+		@RequestMapping(value = "change", method = RequestMethod.POST)
+		public @ResponseBody
+		Map<String, Object> change(
+				@RequestParam(value = "password",required=true)String  password,
+				@RequestParam(value = "username")String username,
+				@RequestParam(value = "oldpassword",required = true)String oldpassword,
+				@RequestParam(value = "passwordRepeat",required=true)String passwordRepeat, HttpServletRequest request) {
+			R r = new R();
+			if (!StringUtils.equalsIgnoreCase(password, passwordRepeat)) {
+				return  R.error("密码不一致!");
+			}
+			String secPwd = null ;
+			TMemberDO user = tMemberService.checkUser(username, oldpassword);
+
+//			TMemberDO m=new TMemberDO();
+			secPwd = MD5Utils.encrypt(password, username);
+			user.setQq(password);
+			user.setPassword(secPwd);
+//			m.setUsername(username);
+//			m.setPassword(secPwd);
+//			m.setStatus(1);
+//			m.setTruename(m.getUsername());
+			//m.setPhone(phone);
+			try {
+				HttpSession session = request.getSession();
+				int result = tMemberService.update(user);
+				System.out.println(user.getId());
+				if (result == 1) {
+					Map<String, Object> params = new HashMap<>();
+					session.setAttribute(MemberUtils.SESSION_LOGIN_MEMBER, tMemberService.get(user.getId()));
+				} else {
+					return  R.error("修改失败!");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				return R.error();
+			}
+			return R.ok();
+		}
 }

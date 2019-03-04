@@ -564,4 +564,24 @@ public class TaoBaoPersonController {
 				map.put("success", "true");
 			 return map;
 		}
+
+	/**
+	 * 重置密码
+	 * 转入页面为重置密码页面 第一步 首先输入正确的旧密码
+	 */
+	@RequestMapping("/resetPW")
+	public ModelAndView changePassword() {
+		ModelAndView model = new ModelAndView("/taobao/resetPW");
+		return model;
+	}
+
+	/**
+	 * 重置密码
+	 * 转入页面为重置密码页面 第二步 输入新的密码  （一步过）
+	 */
+	@RequestMapping("/resetPassword")
+	public ModelAndView changePassword2() {
+		ModelAndView model = new ModelAndView("/taobao/resetPW2");
+		return model;
+	}
 }
