@@ -3,13 +3,7 @@ package com.bootdo.wap;
 
 import com.bootdo.common.utils.Query;
 import com.bootdo.common.utils.R;
-import com.bootdo.shop.domain.CouponDO;
-import com.bootdo.shop.domain.FavoriteDO;
-import com.bootdo.shop.domain.TCartDO;
-import com.bootdo.shop.domain.TGoodSorderDO;
-import com.bootdo.shop.domain.TGoodsDO;
-import com.bootdo.shop.domain.TMemberDO;
-import com.bootdo.shop.domain.TOrderDO;
+import com.bootdo.shop.domain.*;
 import com.bootdo.shop.service.AddressService;
 import com.bootdo.shop.service.CouponService;
 import com.bootdo.shop.service.FavoriteService;
@@ -569,11 +563,11 @@ public class TaoBaoPersonController {
 	 * 重置密码
 	 * 转入页面为重置密码页面 第一步 首先输入正确的旧密码
 	 */
-	@RequestMapping("/resetPW")
-	public ModelAndView changePassword() {
-		ModelAndView model = new ModelAndView("/taobao/resetPW");
-		return model;
-	}
+//	@RequestMapping("/resetPW")
+//	public ModelAndView changePassword() {
+//		ModelAndView model = new ModelAndView("/taobao/resetPW");
+//		return model;
+//	}
 
 	/**
 	 * 重置密码
@@ -582,6 +576,25 @@ public class TaoBaoPersonController {
 	@RequestMapping("/resetPassword")
 	public ModelAndView changePassword2() {
 		ModelAndView model = new ModelAndView("/taobao/resetPW2");
+		return model;
+	}
+
+	/**
+	 * 跳转地址页面
+	 * @return
+	 */
+	@RequestMapping("/address")
+	public ModelAndView checkAddress() {
+		ModelAndView model = new ModelAndView("/taobao/addres");
+		Map<String,Object> addressobj = new HashMap<>();
+		System.out.println(MemberUtils.getSessionLoginUser().getId());
+		addressobj.put("userid", MemberUtils.getSessionLoginUser().getId());
+		List<AddressDO> addresslist = addressService.list(addressobj);
+		for(int i = 0 ; i < addresslist.size() ; i++)
+		{
+			System.out.print(addresslist.get(i).getDetail());
+		}
+		model.addObject("addressList", addresslist);
 		return model;
 	}
 }
