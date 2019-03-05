@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99717389-9a2a-4bd1-bea2-649505a56a4a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/taobao/js/distpicker.data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/taobao/js/distpicker.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/addres.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/addres.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/self.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/self.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/go-address.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/go-address.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,18 +33,28 @@
       <file leaf-file-name="self.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/self.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="123" column="31" lean-forward="false" selection-start-line="123" selection-start-column="27" selection-end-line="123" selection-end-column="31" />
+            <state relative-caret-position="163">
+              <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addres.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/addres.html">
+      <file leaf-file-name="go-address.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/go-address.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378">
-              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            <state relative-caret-position="196">
+              <caret line="121" column="21" lean-forward="true" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resetPW2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/resetPW2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="87" column="37" lean-forward="true" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -51,34 +63,9 @@
       <file leaf-file-name="TaoBaoPersonController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2856">
-              <caret line="596" column="0" lean-forward="false" selection-start-line="596" selection-start-column="0" selection-end-line="596" selection-end-column="0" />
+            <state relative-caret-position="147">
+              <caret line="611" column="0" lean-forward="false" selection-start-line="611" selection-start-column="0" selection-end-line="611" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddressService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/shop/service/AddressService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddressMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/shop/AddressMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-              <folding>
-                <marker date="1546432549512" expanded="true" signature="268:360" ph="select `id`,... t_address" />
-                <marker date="1546432549512" expanded="true" signature="2040:2229" ph="insert into t_address... " />
-                <marker date="1546432549512" expanded="true" signature="2317:2656" ph="update t_add... " />
-                <marker date="1546432549512" expanded="true" signature="2694:2735" ph="delete from " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -86,8 +73,8 @@
       <file leaf-file-name="TaobaoIndexController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaobaoIndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3029">
-              <caret line="397" column="33" lean-forward="true" selection-start-line="397" selection-start-column="33" selection-end-line="397" selection-end-column="33" />
+            <state relative-caret-position="-71">
+              <caret line="323" column="119" lean-forward="true" selection-start-line="323" selection-start-column="119" selection-end-line="323" selection-end-column="119" />
               <folding>
                 <element signature="method#index#0;class#TaobaoIndexController#0" expanded="false" />
                 <element signature="method#index1#0;class#TaobaoIndexController#0" expanded="false" />
@@ -95,7 +82,6 @@
                 <element signature="method#information#0;class#TaobaoIndexController#0" expanded="false" />
                 <element signature="method#newD#0;class#TaobaoIndexController#0" expanded="false" />
                 <element signature="method#toLogin1#0;class#TaobaoIndexController#0" expanded="false" />
-                <element signature="method#reg#1;class#TaobaoIndexController#0" expanded="false" />
                 <element signature="e#12819#12820#0" expanded="true" />
                 <element signature="e#12855#12856#0" expanded="true" />
               </folding>
@@ -131,14 +117,14 @@
       <find>taobao/login</find>
       <find>/login</find>
       <find>update</find>
-      <find>reg</find>
       <find>self</find>
       <find>修改密码</find>
       <find>resetPassword</find>
       <find>地址管理</find>
       <find>address</find>
-      <find>checklogin</find>
       <find>list</find>
+      <find>checklogin</find>
+      <find>reg</find>
       <find>个人信息</find>
       <find>information</find>
     </findStrings>
@@ -176,6 +162,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bootdo/shop/service/AddressService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/self.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/addres.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/go-address.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java" />
       </list>
     </option>
@@ -284,16 +271,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bootdo" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhbitshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhbitshop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bootdo" type="462c0819:PsiDirectoryNode" />
               <item name="wap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -309,7 +286,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zhbitshop" type="b2602c69:ProjectViewProjectNode" />
@@ -317,8 +294,27 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zhbitshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zhbitshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="taobao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zhbitshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zhbitshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="taobao" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zhbitshop" type="b2602c69:ProjectViewProjectNode" />
@@ -364,6 +360,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/taobao/js" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/taobao" />
     </key>
   </component>
@@ -507,7 +504,7 @@
       <workItem from="1548563937650" duration="3171000" />
       <workItem from="1550025052803" duration="5183000" />
       <workItem from="1550719567856" duration="15657000" />
-      <workItem from="1551443450107" duration="10075000" />
+      <workItem from="1551443450107" duration="21218000" />
     </task>
     <task id="LOCAL-00001" summary="修改了数据库端口改成本地的数据库">
       <created>1550026646280</created>
@@ -572,11 +569,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551699431487</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="完善了地址查看的bug 还有地址添加的需要测试">
+      <created>1551703557266</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551703557266</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66480000" />
+    <option name="totallyTimeSpent" value="77623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -628,67 +632,16 @@
     <MESSAGE value="修复了跳转个人信息页面bug" />
     <MESSAGE value="保持版本更新" />
     <MESSAGE value="完善修改密码功能BUG" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善修改密码功能BUG" />
+    <MESSAGE value="完善了地址查看的bug 还有地址添加的需要测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善了地址查看的bug 还有地址添加的需要测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java</url>
-          <line>590</line>
-          <properties />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java</url>
-          <line>588</line>
-          <properties />
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java</url>
-          <line>596</line>
-          <properties />
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java</url>
-          <line>579</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java</url>
-          <line>589</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java</url>
-          <line>594</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="52" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/system/controller/MenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/shop/controller/CouponController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-898">
-          <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/shop/controller/AddressController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-616">
@@ -714,13 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-895">
           <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootdo.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="7463" column="22" lean-forward="false" selection-start-line="7463" selection-start-column="0" selection-end-line="7463" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -995,57 +941,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/resetPW2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/shop/dao/AddressDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaobaoIndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3029">
-          <caret line="397" column="33" lean-forward="true" selection-start-line="397" selection-start-column="33" selection-end-line="397" selection-end-column="33" />
-          <folding>
-            <element signature="method#index#0;class#TaobaoIndexController#0" expanded="false" />
-            <element signature="method#index1#0;class#TaobaoIndexController#0" expanded="false" />
-            <element signature="method#brandGoods#0;class#TaobaoIndexController#0" expanded="false" />
-            <element signature="method#information#0;class#TaobaoIndexController#0" expanded="false" />
-            <element signature="method#newD#0;class#TaobaoIndexController#0" expanded="false" />
-            <element signature="method#toLogin1#0;class#TaobaoIndexController#0" expanded="false" />
-            <element signature="method#reg#1;class#TaobaoIndexController#0" expanded="false" />
-            <element signature="e#12819#12820#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/shop/AddressMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding>
-            <marker date="1546432549512" expanded="true" signature="268:360" ph="select `id`,... t_address" />
-            <marker date="1546432549512" expanded="true" signature="2040:2229" ph="insert into t_address... " />
-            <marker date="1546432549512" expanded="true" signature="2317:2656" ph="update t_add... " />
-            <marker date="1546432549512" expanded="true" signature="2694:2735" ph="delete from " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/self.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="123" column="31" lean-forward="false" selection-start-line="123" selection-start-column="27" selection-end-line="123" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1058,26 +957,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/shop/AddressMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-686">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <marker date="1546432549512" expanded="true" signature="268:360" ph="select `id`,... t_address" />
+            <marker date="1546432549512" expanded="true" signature="2040:2229" ph="insert into t_address... " />
+            <marker date="1546432549512" expanded="true" signature="2317:2656" ph="update t_add... " />
+            <marker date="1546432549512" expanded="true" signature="2694:2735" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/taobao/js/distpicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/shop/service/AddressService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="32" lean-forward="true" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/addres.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <state relative-caret-position="127">
+          <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootdo.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1082">
+          <caret line="7462" column="0" lean-forward="false" selection-start-line="7462" selection-start-column="0" selection-end-line="7462" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaobaoIndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-71">
+          <caret line="323" column="119" lean-forward="true" selection-start-line="323" selection-start-column="119" selection-end-line="323" selection-end-column="119" />
+          <folding>
+            <element signature="method#index#0;class#TaobaoIndexController#0" expanded="false" />
+            <element signature="method#index1#0;class#TaobaoIndexController#0" expanded="false" />
+            <element signature="method#brandGoods#0;class#TaobaoIndexController#0" expanded="false" />
+            <element signature="method#information#0;class#TaobaoIndexController#0" expanded="false" />
+            <element signature="method#newD#0;class#TaobaoIndexController#0" expanded="false" />
+            <element signature="method#toLogin1#0;class#TaobaoIndexController#0" expanded="false" />
+            <element signature="e#12819#12820#0" expanded="true" />
+            <element signature="e#12855#12856#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/self.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/resetPW2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="87" column="37" lean-forward="true" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/go-address.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="121" column="21" lean-forward="true" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="596" column="0" lean-forward="false" selection-start-line="596" selection-start-column="0" selection-end-line="596" selection-end-column="0" />
+        <state relative-caret-position="147">
+          <caret line="611" column="0" lean-forward="false" selection-start-line="611" selection-start-column="0" selection-end-line="611" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -587,14 +587,62 @@ public class TaoBaoPersonController {
 	public ModelAndView checkAddress() {
 		ModelAndView model = new ModelAndView("/taobao/addres");
 		Map<String,Object> addressobj = new HashMap<>();
-		System.out.println(MemberUtils.getSessionLoginUser().getId());
+//		System.out.println(MemberUtils.getSessionLoginUser().getId());
 		addressobj.put("userid", MemberUtils.getSessionLoginUser().getId());
 		List<AddressDO> addresslist = addressService.list(addressobj);
-		for(int i = 0 ; i < addresslist.size() ; i++)
-		{
-			System.out.print(addresslist.get(i).getDetail());
-		}
+//		for(int i = 0 ; i < addresslist.size() ; i++)
+//		{
+//			System.out.print(addresslist.get(i).getDetail());
+//		}
 		model.addObject("addressList", addresslist);
+		return model;
+	}
+
+	/**
+	 * 跳转添加地址页面
+	 */
+	@RequestMapping("/go-address")
+	public ModelAndView addAddress() {
+		ModelAndView model = new ModelAndView("/taobao/go-address");
+		model.addObject("username", MemberUtils.getSessionLoginUser().getUsername());
+		System.out.println(MemberUtils.getSessionLoginUser().getUsername());
+		return model;
+	}
+
+
+	@RequestMapping(value= "/save-address", method = RequestMethod.POST)
+	public @ResponseBody ModelAndView saveAddress(
+			@RequestParam(value = "username",required=true)String username,
+			@RequestParam(value = "userphone",required=true)String userphone,
+			@RequestParam(value = "provinceUser",required=true)String provinceUser,
+			@RequestParam(value = "cityUser",required=true)String cityUser,
+			@RequestParam(value = "distUser",required=true)String distUser,
+			@RequestParam(value = "detailArea",required=true)String detailArea,HttpServletRequest request
+	) {
+		System.out.println(username);
+		System.out.println(userphone);
+		System.out.println(provinceUser + cityUser + distUser);
+		System.out.println(detailArea);
+
+		String detail = provinceUser + cityUser + distUser + detailArea;
+		AddressDO addressDO = new AddressDO();
+		addressDO.setName(username);
+		addressDO.setUserid(MemberUtils.getSessionLoginUser().getId());
+		addressDO.setMobile(userphone);
+		addressDO.setDetail(detail);
+		addressDO.setIsdefault(1);
+		ModelAndView model = new ModelAndView("/taobao/person");
+
+		try{
+			HttpSession session = request.getSession();
+			int result = addressService.save(addressDO);
+			if(result != 1){
+				return model;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			return model;
+		}
 		return model;
 	}
 }

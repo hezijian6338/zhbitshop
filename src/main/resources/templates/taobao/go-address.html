@@ -3,12 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>男装专区</title>
+    <title>添加地址</title>
     <link rel="stylesheet" type="text/css" href="/taobao/css/loaders.min.css"/>
     <link rel="stylesheet" type="text/css" href="/taobao/css/loading.css"/>
     <link rel="stylesheet" type="text/css" href="/taobao/css/base.css"/>
     <link rel="stylesheet" type="text/css" href="/taobao/css/style.css"/>
-      <script src="/taobao/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/taobao/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/taobao/js/distpicker.data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/taobao/js/distpicker.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     	$(window).load(function(){
     		$(".loading").addClass("loader-chanage")
@@ -34,44 +36,37 @@
 		<a class="icona" href="javascript:history.go(-1)">
 				<img src="/taobao/images/left.png"/>
 			</a>
-		<h3>男装专区</h3>
+		<h3>添加地址</h3>
 			
 			<a class="text-top" >
 			</a>
 	</header>
 	
 	<div class="contaniner fixed-conta">
-		<form action="" method="post" class="change-address" id="save">
+		<form method="post" class="change-address" id="save">
 			<ul>
 				<li>
 					<label class="addd">收货人：</label>
-					<input type="text" value="" required="required"/>
+					<textarea id="username" type="text" th:text="${username}"  readonly="readonly"></textarea>
 				</li>
 				<li>
 					<label class="addd">手机号：</label>
-					<input type="tel" value="" required="required"/>
+					<input id="userphone" type="tel" value="" required="required"/>
 				</li>
 				<li>
 					<label class="addd">所在地区：</label>
-					<select>
-						<option>安徽省</option>
-						<option>安徽省</option>
-						<option>安徽省</option>
-					</select>
-					<select>
-						<option>合肥市</option>
-						<option>安庆市</option>
-						<option>上海市</option>
-					</select>
-					<select>
-						<option>高新区</option>
-						<option>蜀山区</option>
-						<option>庐阳区</option>
-					</select>
+					<div data-toggle="distpicker">
+						<select class="selectArea" id="provinceUser">
+						</select>
+						<select class="selectArea" id="cityUser">
+						</select>
+						<select class="selectArea" id="distUser">
+						</select>
+					</div>
 				</li>
 				<li>
 					<label class="addd">详细地址：</label>
-					<textarea required="required"></textarea>
+					<textarea id="detailArea" required="required"></textarea>
 				</li>
 			</ul>
 			
@@ -81,12 +76,12 @@
 					<label class="check" for="check" onselectstart="return false"  >设置为默认地址</label>
 				</li>
 			</ul>
-			<ul>
-				<li>
-					<h3>删除此地址</h3>
-				</li>
-			</ul>
-			<input type="submit" value="保存" />
+			<!--<ul>-->
+				<!--<li>-->
+					<!--<h3>删除此地址</h3>-->
+				<!--</li>-->
+			<!--</ul>-->
+			<input type="submit" onclick="save()" value="保存" />
 		</form>
 	</div>
 	
@@ -99,8 +94,39 @@
 				$(".checkboxa label").addClass("checkd");
 			}
 		})
+
+		function save(){
+            var username=$("#username").val();
+            var userphone=$("#userphone").val();
+            var provinceUser=$("#provinceUser").val();
+            var cityUser=$("#cityUser").val();
+            var distUser=$("#distUser").val();
+            var detailArea=$("#detailArea").val();
+            $.ajax({
+                type: "post",
+                url: '/taobao/person/save-address',
+                data: {
+                    username:username,
+                    userphone:userphone,
+                    provinceUser:provinceUser,
+                    cityUser:cityUser,
+                    distUser:distUser,
+                    detailArea:detailArea
+                },
+                dataType: "json",
+                success:function(data) {
+                    if(data.code==0){
+                        window.location.href = "/taobao/person"
+                    }else{
+                        layer.msg(data.msg);
+                    }
+                }
+            });
+		}
 	</script>
 	
-
+<style>
+	.selectArea{ border:2px solid #F8AC59}
+</style>
 </body>
 </html>
