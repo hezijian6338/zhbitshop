@@ -212,12 +212,23 @@ public class TaoBaoPersonController {
 	 
 	 /**
 	  * 订单管理
+	  * 需要根据不同的status 跳转到不同的status页
 	  * @return
 	  */
 	 @RequestMapping("/order")
 	  public ModelAndView order(HttpServletRequest request) {
-		 ModelAndView model = new ModelAndView("/taobao/order");
 		 String status = request.getParameter("status");
+//		 System.out.print(status);
+		 String orderURL = "/taobao/order";
+		 if(status.equals("1")){
+			 orderURL = orderURL + "four";
+		 }else if(status.equals("2")){
+			 orderURL = orderURL + "two";
+		 }else if(status.equals("9")){
+			 orderURL = orderURL + "three";
+		 }else if(status.equals("3")){
+			 orderURL = orderURL + "one";
+		 }
 		 Map<String, Object> params = new HashMap<>();
 		 if(!StringUtils.isNoneEmpty(status)){
 			 params.put("status",status);
@@ -231,6 +242,8 @@ public class TaoBaoPersonController {
 			 List<TGoodSorderDO> gs = tGoodSorderService.list(params);
 			 orderDO.setGoodsList(gs);
 		 }
+		 System.out.println(orderURL);
+		 ModelAndView model = new ModelAndView(orderURL);
 		 model.addObject("tOrderList",tOrderList);
 		 return model;
 	 }
