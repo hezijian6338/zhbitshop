@@ -230,17 +230,21 @@ public class TaoBaoPersonController {
 			 orderURL = orderURL + "one";
 		 }
 		 Map<String, Object> params = new HashMap<>();
-		 if(!StringUtils.isNoneEmpty(status)){
+		 if(StringUtils.isNoneEmpty(status)&&(!status.equals("4"))){
 			 params.put("status",status);
+			 System.out.println(status);
 		 }
 		 params.put("userid",MemberUtils.getSessionLoginUser().getId());
 		 Query query = new Query(params);
 		 List<TOrderDO> tOrderList = orderService.list(query);
+		 int i = 0;
 		 for (TOrderDO orderDO : tOrderList){
-			 params.clear();
-			 params.put("orderid",orderDO.getId());
-			 List<TGoodSorderDO> gs = tGoodSorderService.list(params);
-			 orderDO.setGoodsList(gs);
+		 	System.out.println(tOrderList.get(i).getId());
+		 	params.clear();
+		 	params.put("orderid",orderDO.getId());
+		 	List<TGoodSorderDO> gs = tGoodSorderService.list(params);
+		 	orderDO.setGoodsList(gs);
+		 	++i;
 		 }
 		 System.out.println(orderURL);
 		 ModelAndView model = new ModelAndView(orderURL);
@@ -632,10 +636,6 @@ public class TaoBaoPersonController {
 			@RequestParam(value = "distUser",required=true)String distUser,
 			@RequestParam(value = "detailArea",required=true)String detailArea,HttpServletRequest request
 	) {
-		System.out.println(username);
-		System.out.println(userphone);
-		System.out.println(provinceUser + cityUser + distUser);
-		System.out.println(detailArea);
 
 		String detail = provinceUser + cityUser + distUser + detailArea;
 		AddressDO addressDO = new AddressDO();
