@@ -253,13 +253,13 @@ public class TaoBaoPersonController {
 	 }
 
 	/**
-	 * 物流
+	 * 物流(后续开发)
 	 * @return
 	 */
 	@RequestMapping("/wuliu/id")
 	public ModelAndView wuliu(@PathVariable("id") Long id) {
 		ModelAndView model = new ModelAndView("/taobao/wuliu");
-
+		System.out.println(id);
 		return model;
 	}
 		@RequestMapping("/ajax/order")
