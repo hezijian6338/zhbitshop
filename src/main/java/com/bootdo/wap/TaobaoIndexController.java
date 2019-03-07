@@ -176,6 +176,23 @@ public class TaobaoIndexController {
 			throw new RuntimeException("导航失败!");
 		}
 	}
+
+	@RequestMapping("/bannerDetail/{id}")
+	public ModelAndView bannerDetail(@PathVariable("id") Long id, HttpServletRequest req)throws Exception{
+		ModelAndView mav=new ModelAndView();
+		Map<String,Object> map = new HashMap<>();
+		BannerDO banner = bannerService.get(id);
+
+		mav.addObject("banners", banner);
+		map.put("brandid",id);
+
+		List<TGoodsDO> goodsDO = tGoodsService.list1(map);
+		mav.addObject("goodslist", goodsDO);
+
+		mav.setViewName("taobao/list");
+		return mav;
+	}
+
 	 @RequestMapping("/goodsDetail/{id}")
 		public ModelAndView goodsDetail(@PathVariable("id") Long id, HttpServletRequest req)throws Exception{
 			ModelAndView mav=new ModelAndView();

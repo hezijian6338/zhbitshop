@@ -607,10 +607,6 @@ public class TaoBaoPersonController {
 //		System.out.println(MemberUtils.getSessionLoginUser().getId());
 		addressobj.put("userid", MemberUtils.getSessionLoginUser().getId());
 		List<AddressDO> addresslist = addressService.list(addressobj);
-//		for(int i = 0 ; i < addresslist.size() ; i++)
-//		{
-//			System.out.print(addresslist.get(i).getDetail());
-//		}
 		model.addObject("addressList", addresslist);
 		return model;
 	}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>男装专区</title>
+    <title>品牌专区</title>
     <link rel="stylesheet" type="text/css" href="/taobao/css/loaders.min.css"/>
     <link rel="stylesheet" type="text/css" href="/taobao/css/loading.css"/>
     <link rel="stylesheet" type="text/css" href="/taobao/css/base.css"/>
@@ -34,7 +34,7 @@
 		<a class="icona" href="javascript:history.go(-1)">
 				<img src="/taobao/images/left.png"/>
 			</a>
-		<h3>男装专区</h3>
+		<h3>品牌专区</h3>
 			
 			<a class="iconb" href="shopcar.html">
 				<img src="/taobao/images/shopbar.png"/>
@@ -73,63 +73,21 @@
 					</li>
 				</ul>
 			</nav>
-			<ul class="wall">
+			<ul class="wall" th:each="goods:${goodslist}">
 				<li class="pic">
 					<a href="detail.html">
-						<img src="/taobao/images/list-ph01.png"/>
-						<p>韩版青少年休闲修身长袖紧身衬衫</p>
-						<b>￥58</b><del>￥538</del>
+						<img th:src="@{'/taobao/images/'+${goods.img}}"/>
+						<p th:text="${goods.title}">韩版青少年休闲修身长袖紧身衬衫</p>
+						<b th:text="${goods.prices}">￥58</b><del>￥538</del>
 					</a>
 				</li>
-				<li class="pic">
-					<a href="detail.html">
-						<img src="/taobao/images/list-ph02.png"/>
-						<p>韩版青少年休闲修身长袖紧身衬衫</p>
-						<b>￥58</b><del>￥538</del>
-					</a>
-				</li>
-				<li class="pic">
-					<a href="detail.html">
-						<img src="/taobao/images/list-ph01.png"/>
-						<p>韩版青少年休闲修身长袖紧身衬衫</p>
-						<b>￥58</b><del>￥538</del>
-					</a>
-				</li>
-				<li class="pic">
-					<a href="detail.html">
-						<img src="/taobao/images/list-ph02.png"/>
-						<p>韩版青少年休闲修身长袖紧身衬衫</p>
-						<b>￥58</b><del>￥538</del>
-					</a>
-				</li>
-				<li class="pic">
-					<a href="detail.html">
-						<img src="/taobao/images/list-ph01.png"/>
-						<p>韩版青少年休闲修身长袖紧身衬衫</p>
-						<b>￥58</b><del>￥538</del>
-					</a>
-				</li>
-				<li class="pic">
-					<a href="detail.html">
-						<img src="/taobao/images/list-ph02.png"/>
-						<p>韩版青少年休闲修身长袖紧身衬衫</p>
-						<b>￥58</b><del>￥538</del>
-					</a>
-				</li>
-				<li class="pic">
-					<a href="detail.html">
-						<img src="/taobao/images/list-ph01.png"/>
-						<p>韩版青少年休闲修身长袖紧身衬衫</p>
-						<b>￥58</b><del>￥538</del>
-					</a>
-				</li>
-				<li class="pic">
-					<a href="detail.html">
-						<img src="/taobao/images/list-ph02.png"/>
-						<p>韩版青少年休闲修身长袖紧身衬衫</p>
-						<b>￥58</b><del>￥538</del>
-					</a>
-				</li>
+				<!--<li class="pic">-->
+					<!--<a href="detail.html">-->
+						<!--<img src="/taobao/images/list-ph02.png"/>-->
+						<!--<p>韩版青少年休闲修身长袖紧身衬衫</p>-->
+						<!--<b>￥58</b><del>￥538</del>-->
+					<!--</a>-->
+				<!--</li>-->
 			</ul>
 		</section>
 	</div>
