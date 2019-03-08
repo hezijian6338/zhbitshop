@@ -83,21 +83,21 @@
 
         <div class="home-nav ui-box">
             <div class="ui-flex flex-justify-sb">
-                <div th:each="brand:${brandList}">
-                    <a th:href="@{'/taobao/brandGoods/'+${brand.id}}"><img th:src="@{'/upload/brand/'+${brand.img}}" alt="" /></a>
+                <div th:each="banner:${bannerList}">
+                    <a th:href="@{'/taobao/bannerDetail/'+${banner.id}}"><img th:src="@{'/upload/banner/'+${banner.img}}" alt="" /></a>
                 </div>
 
             </div>
         </div>
 
-        <div class="home-qnav ui-box">
-            <div class="ui-flex flex-justify-sb">
-                <div><a href="http://www.591zq.com"><img src="/taobao/img/qnav1.png" class="ico" /><span class="name">我的店铺</span></a></div>
-                <div><a href="http://www.591zq.com"><img src="/taobao/img/qnav2.png" class="ico" /><span class="name">招商加盟</span></a></div>
-                <div><a href="http://www.591zq.com"><img src="/taobao/img/qnav3.png" class="ico" /><span class="name">我的喜欢</span></a></div>
-                <div><a href="http://www.591zq.com"><img src="/taobao/img/qnav4.png" class="ico" /><span class="name">猜你喜欢</span></a></div>
-            </div>
-        </div>
+        <!--<div class="home-qnav ui-box">-->
+            <!--<div class="ui-flex flex-justify-sb">-->
+                <!--<div><a href="http://www.591zq.com"><img src="/taobao/img/qnav1.png" class="ico" /><span class="name">我的店铺</span></a></div>-->
+                <!--<div><a href="http://www.591zq.com"><img src="/taobao/img/qnav2.png" class="ico" /><span class="name">招商加盟</span></a></div>-->
+                <!--<div><a href="http://www.591zq.com"><img src="/taobao/img/qnav3.png" class="ico" /><span class="name">我的喜欢</span></a></div>-->
+                <!--<div><a href="http://www.591zq.com"><img src="/taobao/img/qnav4.png" class="ico" /><span class="name">猜你喜欢</span></a></div>-->
+            <!--</div>-->
+        <!--</div>-->
 
         <div class="home-newgoods ui-box">
             <img class="home-imgtit" src="/taobao/img/hometit1.jpg" alt="" />
