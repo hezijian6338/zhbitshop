@@ -1,17 +1,16 @@
 package com.bootdo.utils;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author Mickey</a>
  */
 
 public class ChangePageUtils {
-    public static String ChangePage(String obj) {
-        return obj;
+    public static ModelAndView ChangePage(String obj) {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName(obj);
+        return mav;
     }
 }
 
