@@ -4,18 +4,7 @@ package com.bootdo.wap;
 import com.bootdo.common.utils.Query;
 import com.bootdo.common.utils.R;
 import com.bootdo.shop.domain.*;
-import com.bootdo.shop.service.AddressService;
-import com.bootdo.shop.service.CouponService;
-import com.bootdo.shop.service.FavoriteService;
-import com.bootdo.shop.service.TArticleService;
-import com.bootdo.shop.service.TBrandService;
-import com.bootdo.shop.service.TCartService;
-import com.bootdo.shop.service.TGoodSorderService;
-import com.bootdo.shop.service.TGoodsClassService;
-import com.bootdo.shop.service.TGoodsService;
-import com.bootdo.shop.service.TGoodsTypeService;
-import com.bootdo.shop.service.TMemberService;
-import com.bootdo.shop.service.TOrderService;
+import com.bootdo.shop.service.*;
 import com.bootdo.utils.ChangePageUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +59,8 @@ public class TaoBaoPersonController {
     private TGoodSorderService tGoodSorderService;
     @Autowired
     private CouponService couponService;
+    @Autowired
+    private LikbuyService likbuyService;
 
     @RequestMapping("")
     public ModelAndView index() {
@@ -455,7 +446,9 @@ public class TaoBaoPersonController {
     public ModelAndView cartList() {
         ModelAndView model = new ModelAndView("/taobao/shopcar");
         if (MemberUtils.getSessionLoginUser() != null) {
-            model.addObject("cartList", tCartService.selectOwnCart(MemberUtils.getSessionLoginUser().getId()));
+            Map<String, Object> params = new HashMap<>();
+            params.put("userid", MemberUtils.getSessionLoginUser().getId());
+            model.addObject("cartList", tCartService.list(params));
         } else {
             model.addObject("cartList", new ArrayList<>());
         }
@@ -482,9 +475,8 @@ public class TaoBaoPersonController {
         }
         Map<String, Object> params = new HashMap<>();
         params.put("userid", MemberUtils.getSessionLoginUser().getId());
-        List<TCartDO> cartList = tCartService.list(params);
-        mav.addObject("cartList", cartList);
-
+        List<LikbuyDO> likbuyDOList = likbuyService.list(params);
+        mav.addObject("likbuyDoList", likbuyDOList);
 
         mav.addObject("goods", tGoodsService.get(TGoodsId));
         mav.setViewName("taobao/LikBuy");
