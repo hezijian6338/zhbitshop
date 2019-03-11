@@ -130,19 +130,19 @@
                 </div>
             </div>
         </div>
-            <!--优惠劵  -->
-            <div class="home-fashion ui-box ui-border-t">
-                <img class="home-imgtit" src="/taobao/img/hometit3.jpg" alt="" />
-                <div class="fastion-plist mui-row">
-                    <div class="mui-col-xs-4" th:each="coupon:${couponList}">
-                        <a class="item">
-                            <image th:if="${coupon.isReceive == 0}" src="/taobao/images/icon-coupon-index.png"></image>
-                            <image th:if="${coupon.isReceive == 1}" src="/taobao/images/icon-coupon-no.png"></image>
-                            <span class="tit" th:text="${coupon.couponName}">印花卫衣</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <!--优惠劵  去掉-->
+            <!--<div class="home-fashion ui-box ui-border-t">-->
+                <!--<img class="home-imgtit" src="/taobao/img/hometit3.jpg" alt="" />-->
+                <!--<div class="fastion-plist mui-row">-->
+                    <!--<div class="mui-col-xs-4" th:each="coupon:${couponList}">-->
+                        <!--<a class="item">-->
+                            <!--&lt;!&ndash;<image th:if="${coupon.isReceive == 0}" src="/taobao/images/icon-coupon-index.png"></image>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<image th:if="${coupon.isReceive == 1}" src="/taobao/images/icon-coupon-no.png"></image>&ndash;&gt;-->
+                            <!--<span class="tit" th:text="${coupon.couponName}">印花卫衣</span>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
             <!--专题  -->
             <div class="home-fashion ui-box ui-border-t">
                 <img class="home-imgtit" src="/taobao/img/hometit3.jpg" alt="" />

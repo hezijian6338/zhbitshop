@@ -123,16 +123,22 @@ public class TaobaoIndexController {
 				params.put("limit", 3);
 				params.put("sort","clickHit");
 				params.put("order","desc");
+				//这个是点击数显示的
 				model.addObject("hitList", tGoodsService.list(params));
+
 				params = new Query(params1);
 				params.put("limit", 3);
 				params.put("sort","create_date");
 				params.put("order","desc");
+				//这个是按照创建日期显示的
 				model.addObject("xinpinList", tGoodsService.list(params));
+
 				params = new Query(params1);
 				params.put("limit", 6);
 				params.put("iscom","1");
+				//选出这个商品是否推荐 1为推荐 2为不推荐
 				model.addObject("commList", tGoodsService.list(params));
+
 				model.addObject("brandList",brandList);
 				model.addObject("topicList",topicList);
 				model.addObject("bannerList",bannerList);
