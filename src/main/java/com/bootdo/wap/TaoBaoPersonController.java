@@ -401,6 +401,18 @@ public class TaoBaoPersonController {
     }
 
     /**
+     * 页面分类显示
+     *
+     * @return
+     */
+    @RequestMapping("/typelist")
+    public ModelAndView goodsType() {
+        ModelAndView model = new ModelAndView("/taobao/index-bak");
+
+        return model;
+    }
+
+    /**
      * 意见反馈
      *
      * @return
@@ -578,8 +590,8 @@ public class TaoBaoPersonController {
         Long userid = MemberUtils.getSessionLoginUser().getId();
         cart.setUserid(userid);
         Map<String, Object> params = new HashMap<>();
-        params.put("userid",userid);
-        params.put("goodsid",goodsid);
+        params.put("userid", userid);
+        params.put("goodsid", goodsid);
         TCartDO check = tCartService.selectOne(params);
         int result = 0;
         if (check == null) {
