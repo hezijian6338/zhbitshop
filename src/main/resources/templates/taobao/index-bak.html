@@ -58,52 +58,52 @@
 				</li>
 			</ul>
 		</figure>
-		
+		<!--这里没有图片所以只能硬性加入了-->
 		<section class="shop">
 			<h3>
 				<a href="#">
-					服装
+					种类
 					<span><img src="/taobao/images/right.png"/></span>
 				</a>
 			</h3>
-			<dl>
+			<dl th:each="type:${typeList}">
 				<dd>
-					<a href="list.html">
+					<a th:href="@{'/taobao/person/information/'+ ${type.id}}">
 						<img src="/taobao/images/index-ph01.png"/>
-						<b>男装</b>
+						<b th:text="${type.name}">男装</b>
 					</a>
 				</dd>
-				<dd>
-					<a href="list.html">
-						<img src="/taobao/images/index-ph02.png"/>
-						<b>女装</b>
-					</a>
-				</dd>
+				<!--<dd>-->
+					<!--<a href="list.html">-->
+						<!--<img src="/taobao/images/index-ph02.png"/>-->
+						<!--<b>女装</b>-->
+					<!--</a>-->
+				<!--</dd>-->
 			</dl>
 		</section>
-		
-		<section class="shop">
-			<h3>
-				<a href="list.html">
-					食品
-					<span><img src="/taobao/images/right.png"/></span>
-				</a>
-			</h3>
-			<dl>
-				<dd>
-					<a href="list.html">
-						<img src="/taobao/images/index-03.png"/>
-						<b>切糕</b>
-					</a>
-				</dd>
-				<dd>
-					<a href="list.html">
-						<img src="/taobao/images/index-ph04.png"/>
-						<b>酥饼</b>
-					</a>
-				</dd>
-			</dl>
-		</section>
+		<!---->
+		<!--<section class="shop">-->
+			<!--<h3>-->
+				<!--<a href="list.html">-->
+					<!--食品-->
+					<!--<span><img src="/taobao/images/right.png"/></span>-->
+				<!--</a>-->
+			<!--</h3>-->
+			<!--<dl>-->
+				<!--<dd>-->
+					<!--<a href="list.html">-->
+						<!--<img src="/taobao/images/index-03.png"/>-->
+						<!--<b>切糕</b>-->
+					<!--</a>-->
+				<!--</dd>-->
+				<!--<dd>-->
+					<!--<a href="list.html">-->
+						<!--<img src="/taobao/images/index-ph04.png"/>-->
+						<!--<b>酥饼</b>-->
+					<!--</a>-->
+				<!--</dd>-->
+			<!--</dl>-->
+		<!--</section>-->
 	</div>
 	
 	<footer class="page-footer fixed-footer">

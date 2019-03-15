@@ -406,9 +406,13 @@ public class TaoBaoPersonController {
      * @return
      */
     @RequestMapping("/typelist")
-    public ModelAndView goodsType() {
+    public ModelAndView goodsType(HttpServletRequest request) {
         ModelAndView model = new ModelAndView("/taobao/index-bak");
-
+        //从t_goods_class 获取出相关的数据
+        Map<String, Object> map = new HashMap<>();
+        map.put("del_flag",1);
+        List<TGoodsTypeDO> list = tGoodsTypeService.list(map);
+        request.setAttribute("typeList", list);
         return model;
     }
 
@@ -728,6 +732,22 @@ public class TaoBaoPersonController {
             e.printStackTrace();
             return model;
         }
+        return model;
+    }
+
+
+    @RequestMapping("/information/{typeid}")
+    public ModelAndView typeInformation(@PathVariable("typeid") int typeid) {
+        ModelAndView model = new ModelAndView("/taobao/typeGoodsList");
+//      TMemberDO member = tMemberService.get(createBy);
+        Map<String, Object> map = new HashMap<>();
+        map.put("typeid",typeid);
+        List<TGoodsDO> goodslist = tGoodsService.list(map);
+        for(int i = 0 ; i < goodslist.size() ; i++) {
+            System.out.println(goodslist.get(i).getTitle());
+        }
+        model.addObject("goodslist", goodslist);
+//        model.addObject("member", member);
         return model;
     }
 }
