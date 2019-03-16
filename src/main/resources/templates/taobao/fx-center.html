@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-Hans" xmlns:th="http://www.w3.org/1999/xhtml">
 	<head>
 	    <meta name="renderer" content="webkit|ie-comp|ie-stand">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -113,34 +113,34 @@
 			</div>
 			
 		</div>
-		<!--p-center end-->
-			<footer class="page-footer page-footer1 fixed-footer" id="footer">
-				<ul style="height: auto;">
-					<li>
-						<a href="index.html">
-							<img src="/taobao/images/footer001.png"/>
-							<p>首页</p>
-						</a>
-					</li>
-					<li>
-						<a href="assort.html">
-							<img src="/taobao/images/footer002.png"/>
-							<p>分类</p>
-						</a>
-					</li>
-					<li>
-						<a href="shopcar.html">
-							<img src="/taobao/images/footer003.png"/>
-							<p>购物车</p>
-						</a>
-					</li>
-					<li class="active">
-						<a href="self.html">
-							<img src="/taobao/images/footer04.png"/>
-							<p>个人中心</p>
-						</a>
-					</li>
-				</ul>
-			</footer>
+		<footer class="page-footer fixed-footer">
+			<ul>
+				<li>
+					<a href="/taobao/">
+						<img src="/taobao/images/footer001.png"/>
+						<p>首页</p>
+					</a>
+				</li>
+				<li>
+					<a href="/taobao/person/typelist">
+						<img src="/taobao/images/footer002.png"/>
+						<p>分类</p>
+					</a>
+				</li>
+				<li >
+					<a href="/taobao/person/cartList">
+						<img src="/taobao/images/footer003.png"/>
+						<p>购物车</p>
+					</a>
+				</li>
+				<li class="active">
+					<a href="person">
+						<img src="/taobao/images/footer04.png"/>
+						<p>个人中心</p>
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<div th:replace="taobao/layout/footNav"></div>
 	</body>
 </html>
