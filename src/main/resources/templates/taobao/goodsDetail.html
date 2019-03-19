@@ -63,41 +63,43 @@
                 </div>
             </dt>
             <dd>
-                <b th:text="${goods.prices}">￥28.99</b>
-                <del th:text="${goods.prices}">￥139</del>
+                <b th:text="'$'+${goods.prices}">￥28.99</b>
+                <del th:text="'$'+${goods.prices}">￥139</del>
                 <input type="button" value="￥10.00" readonly/>
                 <small>+356积分</small>
             </dd>
         </dl>
 
         <div class="chose">
-            <ul>
-                <h3>颜色</h3>
-                <li>
-                    黑色
-                </li>
-                <li>
-                    粉色
-                </li>
-                <li>
-                    灰色
-                </li>
-                <li>
-                    红色
-                </li>
-            </ul>
-            <ul>
-                <h3>尺寸</h3>
-                <li>
-                    L
-                </li>
-                <li>
-                    XL
-                </li>
-                <li>
-                    XXL
-                </li>
-            </ul>
+            <!--颜色和尺寸不选择 只选择数量 并显示在相关当前页面上 然后传入后台进行数字计算-->
+            <input placeholder="请输入认购数额（整数）" autocomplete="off" type="number" type="text" onKeyUp="this.value=this.value.replace(/[^\.\d]/g,'');this.value=this.value.replace('.','');">
+            <!--<ul>-->
+                <!--<h3>颜色</h3>-->
+                <!--<li>-->
+                    <!--黑色-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--粉色-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--灰色-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--红色-->
+                <!--</li>-->
+            <!--</ul>-->
+            <!--<ul>-->
+                <!--<h3>尺寸</h3>-->
+                <!--<li>-->
+                    <!--L-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--XL-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--XXL-->
+                <!--</li>-->
+            <!--</ul>-->
         </div>
 
         <a href="#" class="seven">
@@ -112,7 +114,7 @@
 					</span>
                 <li class="one" th:each="g:${typeGoods}">
                     <img th:src="@{'/upload/project/'+${g.img}}"/>
-                    <p th:text="${g.prices}">￥188.00</p>
+                    <p th:text="'$'+${g.prices}">￥188.00</p>
                 </li>
 
             </a>
