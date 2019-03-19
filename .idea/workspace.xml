@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99717389-9a2a-4bd1-bea2-649505a56a4a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/~$Ljj开发.docx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/assort.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/assort.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/balance.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/balance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/fx-center.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/fx-center.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/fx-center1.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/fx-center1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/huiyuan.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/huiyuan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/index-bak.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/index-bak.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/buy.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/buy.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/self.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/self.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/taobao/shopcar.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/taobao/shopcar.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,15 +27,17 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="TaobaoIndexController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaobaoIndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="0">
               <caret line="418" column="26" lean-forward="false" selection-start-line="418" selection-start-column="18" selection-end-line="418" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#newD#0;class#TaobaoIndexController#0" expanded="false" />
+                <element signature="e#15677#15678#0" expanded="true" />
+                <element signature="e#15720#15721#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,8 +46,8 @@
       <file leaf-file-name="TaoBaoPersonController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="461" column="32" lean-forward="false" selection-start-line="461" selection-start-column="24" selection-end-line="461" selection-end-column="32" />
+            <state relative-caret-position="-235">
+              <caret line="486" column="32" lean-forward="false" selection-start-line="486" selection-start-column="25" selection-end-line="486" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,11 +55,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shopcar.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/shopcar.html">
+      <file leaf-file-name="goodsDetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/goodsDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="88" column="20" lean-forward="true" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+            <state relative-caret-position="289">
+              <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="buy.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/buy.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="57" column="69" lean-forward="true" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
+              <folding>
+                <element signature="n#style#0;n#p#1;n#dl#0;n#div#0;n#header#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#dl#0;n#div#0;n#header#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#dd#1;n#dl#0;n#div#1;n#header#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addres.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/addres.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="55" column="10" lean-forward="true" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -81,15 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>information</find>
-      <find>消费记录</find>
-      <find>order</find>
-      <find>reg</find>
-      <find>taobao/goods</find>
-      <find>wuliu</find>
-      <find>订单</find>
-      <find>address</find>
-      <find>banner</find>
       <find>我的店铺</find>
       <find>iscom</find>
       <find>topic</find>
@@ -105,12 +115,21 @@
       <find>Lik</find>
       <find>addCart</find>
       <find>Cart</find>
-      <find>likbuy</find>
       <find>cart</find>
       <find>bannerDeta</find>
       <find>Type</find>
       <find>fxcenter</find>
       <find>cartList</find>
+      <find>datum</find>
+      <find>likbuy</find>
+      <find>userse</find>
+      <find>goodsDetail</find>
+      <find>go-add</find>
+      <find>taobao/buy</find>
+      <find>address</find>
+      <find>/address</find>
+      <find>goodsDe</find>
+      <find>addressDetail</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/java/com/bootdo/wap</dir>
@@ -155,8 +174,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/layout/footNav.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaobaoIndexController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/typeGoodsList.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/self.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/huiyuan.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/fx-center.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/balance.html" />
@@ -165,6 +182,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/index-bak.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/fx-center1.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/shopcar.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/self.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/taobao/buy.html" />
       </list>
     </option>
   </component>
@@ -190,9 +210,8 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="62" />
-    <option name="width" value="1378" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectView">
@@ -210,7 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -309,6 +327,7 @@
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -482,7 +501,8 @@
       <workItem from="1551911427557" duration="9001000" />
       <workItem from="1552225137031" duration="14243000" />
       <workItem from="1552560999794" duration="97000" />
-      <workItem from="1552641929034" duration="10705000" />
+      <workItem from="1552641929034" duration="11393000" />
+      <workItem from="1552785126675" duration="15628000" />
     </task>
     <task id="LOCAL-00001" summary="修改了数据库端口改成本地的数据库">
       <created>1550026646280</created>
@@ -638,14 +658,21 @@
       <option name="project" value="LOCAL" />
       <updated>1552649812440</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="更换了footer的响应图片和文字">
+      <created>1552750057112</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1552750057112</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122351000" />
+    <option name="totallyTimeSpent" value="138667000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -707,7 +734,8 @@
     <MESSAGE value="购物车链接bug 修复完成" />
     <MESSAGE value="分类的bug页面 跳转已经完成" />
     <MESSAGE value="分类页面动态显示已经完成 并且点击后成功显示种类下的相关产品" />
-    <option name="LAST_COMMIT_MESSAGE" value="分类页面动态显示已经完成 并且点击后成功显示种类下的相关产品" />
+    <MESSAGE value="更换了footer的响应图片和文字" />
+    <option name="LAST_COMMIT_MESSAGE" value="更换了footer的响应图片和文字" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -718,20 +746,18 @@
           <properties />
           <option name="timeStamp" value="86" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bootdo/system/service/impl/UserServiceImp.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="134" />
+      <option name="time" value="138" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/shop/service/impl/LikbuyServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/shop/LikbuyMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -749,7 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,7 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,23 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/goodsDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="207" column="53" lean-forward="true" selection-start-line="207" selection-start-column="53" selection-end-line="207" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/gobuy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,7 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-601">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-624">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,39 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3450">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/datum.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-301">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/buy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-958">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/assess.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-212">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/addres.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-363">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,7 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-403">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-481">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-158">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,7 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,7 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-363">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-439">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-669">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,44 +1022,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2835">
-          <caret line="189" column="0" lean-forward="true" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/index-bak.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="122" column="16" lean-forward="true" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/self.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="192" column="17" lean-forward="true" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/assort.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/balance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="154" column="34" lean-forward="false" selection-start-line="154" selection-start-column="34" selection-end-line="154" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1120,32 +1046,126 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/shopcar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="88" column="20" lean-forward="false" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/assess.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-817">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/assort.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1359">
+          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/balance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2310">
+          <caret line="154" column="34" lean-forward="false" selection-start-line="154" selection-start-column="34" selection-end-line="154" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/gobuy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/datum.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-485">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/system/service/impl/UserServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="38" column="59" lean-forward="true" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaobaoIndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="0">
           <caret line="418" column="26" lean-forward="false" selection-start-line="418" selection-start-column="18" selection-end-line="418" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#newD#0;class#TaobaoIndexController#0" expanded="false" />
+            <element signature="e#15677#15678#0" expanded="true" />
+            <element signature="e#15720#15721#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/self.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1435">
+          <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/addres.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="55" column="10" lean-forward="true" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bootdo/wap/TaoBaoPersonController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="461" column="32" lean-forward="false" selection-start-line="461" selection-start-column="24" selection-end-line="461" selection-end-column="32" />
+        <state relative-caret-position="-235">
+          <caret line="486" column="32" lean-forward="false" selection-start-line="486" selection-start-column="25" selection-end-line="486" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/shopcar.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/goodsDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="88" column="20" lean-forward="true" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+        <state relative-caret-position="289">
+          <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/taobao/buy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="57" column="69" lean-forward="true" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#p#1;n#dl#0;n#div#0;n#header#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#dl#0;n#div#0;n#header#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#dd#1;n#dl#0;n#div#1;n#header#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

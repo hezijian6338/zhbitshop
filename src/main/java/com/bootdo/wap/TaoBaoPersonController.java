@@ -5,6 +5,8 @@ import com.bootdo.common.utils.Query;
 import com.bootdo.common.utils.R;
 import com.bootdo.shop.domain.*;
 import com.bootdo.shop.service.*;
+import com.bootdo.system.domain.UserDO;
+import com.bootdo.system.service.UserService;
 import com.bootdo.utils.ChangePageUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +63,8 @@ public class TaoBaoPersonController {
     private CouponService couponService;
     @Autowired
     private LikbuyService likbuyService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("")
     public ModelAndView index() {
@@ -473,7 +477,8 @@ public class TaoBaoPersonController {
 
     /**
      * 立即购买
-     *
+     * 跳转到购买页面
+     * 需要接受一堆的数据 接受搜要购买的物品的用户详细信息
      * @param
      * @return
      * @throws Exception
@@ -489,13 +494,30 @@ public class TaoBaoPersonController {
             ModelAndView model1 = new ModelAndView("taobao/login");
             return model1;
         }
+        //登录后开始跳转到相关的支付页面
         Map<String, Object> params = new HashMap<>();
-        params.put("userid", MemberUtils.getSessionLoginUser().getId());
-        List<LikbuyDO> likbuyDOList = likbuyService.list(params);
-        mav.addObject("likbuyDoList", likbuyDOList);
+        Long userid = MemberUtils.getSessionLoginUser().getId();
+        params.put("userid", userid);
 
-        mav.addObject("goods", tGoodsService.get(TGoodsId));
-        mav.setViewName("taobao/LikBuy");
+        //传用户的相关数据(还有地址还没有成功传递)
+        TMemberDO userDO = tMemberService.get(userid);
+        mav.addObject("user",userDO);
+
+        //根据用户确定地址列表
+        Map<String, Object> params1 = new HashMap<>();
+        params1.put("userid", userid);
+        List<AddressDO> addressList = addressService.list(params1);
+        mav.addObject("addressList", addressList);
+        mav.addObject("address", addressList.get(0));
+
+        //传递所要购买的物品的数据 根据上面传过来的 TGoodsId 进行传送
+        TGoodsDO tGoodsDO = tGoodsService.get(TGoodsId);
+        mav.addObject("goods",tGoodsDO);
+
+//      List<LikbuyDO> likbuyDOList = likbuyService.list(params);
+//      mav.addObject("likbuyDoList", likbuyDOList);
+//      mav.addObject("goods", tGoodsService.get(TGoodsId));
+        mav.setViewName("taobao/buy");
         return mav;
     }
 
