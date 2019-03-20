@@ -72,39 +72,43 @@
 
         <div class="chose">
             <!--颜色和尺寸不选择 只选择数量 并显示在相关当前页面上 然后传入后台进行数字计算-->
-            <input placeholder="请输入认购数额（整数）" autocomplete="off" type="number" type="text" onKeyUp="this.value=this.value.replace(/[^\.\d]/g,'');this.value=this.value.replace('.','');">
+            <center>
+                <input placeholder="请输入认购数额（整数）" type="number" maxlength="2"
+                       onKeyUp="this.value=this.value.replace(/[^\.\d]/g,'');this.value=this.value.replace('.','');"
+                       onblur="displayValue()" id="inputNumber">
+            </center>
             <!--<ul>-->
-                <!--<h3>颜色</h3>-->
-                <!--<li>-->
-                    <!--黑色-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--粉色-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--灰色-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--红色-->
-                <!--</li>-->
+            <!--<h3>颜色</h3>-->
+            <!--<li>-->
+            <!--黑色-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--粉色-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--灰色-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--红色-->
+            <!--</li>-->
             <!--</ul>-->
             <!--<ul>-->
-                <!--<h3>尺寸</h3>-->
-                <!--<li>-->
-                    <!--L-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--XL-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--XXL-->
-                <!--</li>-->
+            <!--<h3>尺寸</h3>-->
+            <!--<li>-->
+            <!--L-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--XL-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--XXL-->
+            <!--</li>-->
             <!--</ul>-->
         </div>
 
         <a href="#" class="seven">
             <b>7</b>天无理由退换货
-            <span id="sss"></span>
+            <span id="sss"></span><span>件</span>
         </a>
 
         <ul class="same">
@@ -190,6 +194,14 @@
     })
 </script>
 <script type="text/javascript">
+
+    function displayValue() {
+        var value = document.getElementById("inputNumber").value
+        //向sss框插入相关的数据
+//        document.getElementById("sss").value = value;
+        $('#sss').html(value);
+        console.log(value)
+    }
     function addCart(type) {
 
         var goodsid = $("#goodsid").val();
@@ -207,7 +219,8 @@
                         console.log('成功加入购物车');
                     } else {
                         var goodsid1 = $("#goodsid").val();
-                        window.location.href = "/taobao/person/LikBuy/" + goodsid1;
+                        var account = document.getElementById("inputNumber").value
+                        window.location.href = "/taobao/person/LikBuy/" + goodsid1 + "/" + account;
                     }
                 } else if (data.success == 'login') {
                     window.location.href = "/taobao/login"

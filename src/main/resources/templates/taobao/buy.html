@@ -85,21 +85,18 @@
         </header>
         <div class="buy-list">
             <ul>
-                <a href="taobao/person/goods">
-                    <figure>
-                        <img th:src="@{'/upload/tgoods/'+${goods.img}}"/>
-                    </figure>
-                    <li>
-                        <h3 th:text="${goods.title}">超级大品牌服装，现在够买只要998</h3>
-                        <span>
-								颜色：经典绮丽款
-								<br/>
-								尺寸：M
-							</span>
-                        <b>￥32.00</b>
-                        <small>×3</small>
-                    </li>
-                </a>
+                <!--<a th:href="@{'taobao/goodsDetail/' +${goods.id}}">-->
+                <figure>
+                    <img th:src="@{'/upload/tgoods/'+${goods.img}}"/>
+                </figure>
+                <h3 th:text="${goods.title}">超级大品牌服装，现在够买只要998</h3>
+                <span th:text="${goods.typename}"></span>
+                <br/>
+                <span th:text="${goods.storename}"></span>
+                <br/>
+                <small>¥</small>&nbsp;<b th:text="${goods.prices}">￥32.00</b>
+                <br/>
+                <small>x</small>&nbsp;<b th:text="${account}">×3</b>
             </ul>
             <dl>
                 <dd>
@@ -108,7 +105,7 @@
                 </dd>
                 <dd>
                     <span>商品总额</span>
-                    <small>￥98.00</small>
+                    <small th:text="${sum}">￥98.00</small>
                 </dd>
                 <dt>
                     <textarea rows="4" placeholder="给卖家留言（50字以内）"></textarea>

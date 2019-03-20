@@ -414,7 +414,7 @@ public class TaoBaoPersonController {
         ModelAndView model = new ModelAndView("/taobao/index-bak");
         //从t_goods_class 获取出相关的数据
         Map<String, Object> map = new HashMap<>();
-        map.put("del_flag",1);
+        map.put("del_flag", 1);
         List<TGoodsTypeDO> list = tGoodsTypeService.list(map);
         request.setAttribute("typeList", list);
         return model;
@@ -464,7 +464,13 @@ public class TaoBaoPersonController {
      */
     @RequestMapping("/cartList")
     public ModelAndView cartList() {
+        TMemberDO member = MemberUtils.getSessionLoginUser();
         ModelAndView model = new ModelAndView("/taobao/shopcar");
+        //如果member为空 转入登录页面
+        if (member == null) {
+            ModelAndView model1 = new ModelAndView("taobao/login");
+            return model1;
+        }
         if (MemberUtils.getSessionLoginUser() != null) {
             Map<String, Object> params = new HashMap<>();
             params.put("userid", MemberUtils.getSessionLoginUser().getId());
@@ -479,12 +485,14 @@ public class TaoBaoPersonController {
      * 立即购买
      * 跳转到购买页面
      * 需要接受一堆的数据 接受搜要购买的物品的用户详细信息
+     *
      * @param
      * @return
      * @throws Exception
      */
-    @RequestMapping("/LikBuy/{TGoodsId}")
+    @RequestMapping("/LikBuy/{TGoodsId}/{account}")
     public ModelAndView TGoodsDetail(@PathVariable("TGoodsId") Long TGoodsId,
+                                     @PathVariable("account") int account,
                                      HttpSession session) throws Exception {
         ModelAndView mav = new ModelAndView();
         TMemberDO member = MemberUtils.getSessionLoginUser();
@@ -501,7 +509,7 @@ public class TaoBaoPersonController {
 
         //传用户的相关数据(还有地址还没有成功传递)
         TMemberDO userDO = tMemberService.get(userid);
-        mav.addObject("user",userDO);
+        mav.addObject("user", userDO);
 
         //根据用户确定地址列表
         Map<String, Object> params1 = new HashMap<>();
@@ -512,8 +520,11 @@ public class TaoBaoPersonController {
 
         //传递所要购买的物品的数据 根据上面传过来的 TGoodsId 进行传送
         TGoodsDO tGoodsDO = tGoodsService.get(TGoodsId);
-        mav.addObject("goods",tGoodsDO);
+        mav.addObject("goods", tGoodsDO);
 
+        int sum = account * Integer.parseInt(tGoodsDO.getPrices());
+        mav.addObject("account", account);
+        mav.addObject("sum", sum);
 //      List<LikbuyDO> likbuyDOList = likbuyService.list(params);
 //      mav.addObject("likbuyDoList", likbuyDOList);
 //      mav.addObject("goods", tGoodsService.get(TGoodsId));
@@ -763,9 +774,9 @@ public class TaoBaoPersonController {
         ModelAndView model = new ModelAndView("/taobao/typeGoodsList");
 //      TMemberDO member = tMemberService.get(createBy);
         Map<String, Object> map = new HashMap<>();
-        map.put("typeid",typeid);
+        map.put("typeid", typeid);
         List<TGoodsDO> goodslist = tGoodsService.list(map);
-        for(int i = 0 ; i < goodslist.size() ; i++) {
+        for (int i = 0; i < goodslist.size(); i++) {
             System.out.println(goodslist.get(i).getTitle());
         }
         model.addObject("goodslist", goodslist);
