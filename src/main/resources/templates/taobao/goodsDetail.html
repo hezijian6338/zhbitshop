@@ -57,10 +57,10 @@
                 <h3 th:text="${goods.title}"></h3>
                 <!--<h3 th:text="${goods.id}"></h3>-->
                 <textarea th:text="${goods.id}" id="goodsid" hidden="hidden"></textarea>
-                <div class="collect">
-                    <img src="/taobao/images/detail-heart-hei.png"/>
-                    <p>收藏</p>
-                </div>
+                <!--<div class="collect">-->
+                    <!--<img src="/taobao/images/detail-heart-hei.png"/>-->
+                    <!--<p>收藏</p>-->
+                <!--</div>-->
             </dt>
             <dd>
                 <b th:text="'$'+${goods.prices}">￥28.99</b>
@@ -220,6 +220,9 @@
                     } else {
                         var goodsid1 = $("#goodsid").val();
                         var account = document.getElementById("inputNumber").value
+                        if(account == 0 || isNaN(account) || account==undefined || account == null || account == ""){
+                            account = 1;
+                        }
                         window.location.href = "/taobao/person/LikBuy/" + goodsid1 + "/" + account;
                     }
                 } else if (data.success == 'login') {
