@@ -763,7 +763,6 @@ public class TaoBaoPersonController {
         addressDO.setIsdefault(1);
 
         try {
-            HttpSession session = request.getSession();
             int result = addressService.save(addressDO);
             if (result != 1) {
                 return r;

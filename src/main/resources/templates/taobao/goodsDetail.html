@@ -35,7 +35,7 @@
 <header class="detail-header fixed-header">
     <a href="javascript:history.go(-1)"><img src="/taobao/images/detail-left.png"/></a>
 
-    <a href="shopcar.html" class="right"><img src="/taobao/images/shopbar.png"/></a>
+    <a class="right" onclick="addCart(1)"><img src="/taobao/images/shopbar.png"/></a>
 </header>
 
 <div class="contaniner fixed-contb">
@@ -217,6 +217,7 @@
 //                        layer.msg("加入购车成功!", 2, 8);
                         alert("成功加入购物车");
                         console.log('成功加入购物车');
+                        window.location.href = "/taobao/sucess"
                     } else {
                         var goodsid1 = $("#goodsid").val();
                         var account = document.getElementById("inputNumber").value

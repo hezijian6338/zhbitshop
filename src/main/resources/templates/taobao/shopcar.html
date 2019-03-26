@@ -37,7 +37,7 @@
 <div class="contaniner fixed-contb">
     <section class="shopcar" th:each="cart:${cartList}">
         <div class="shopcar-checkbox">
-            <label for="shopcar" onselectstart="return false"></label>
+            <!--<label for="shopcar" onselectstart="return false"></label>-->
             <input type="checkbox" id="shopcar"/>
         </div>
         <figure><img th:src="@{'/upload/project/'+${cart.img}}"/></figure>
@@ -46,9 +46,9 @@
             <!--<dd>颜色：经典绮丽款</dd>-->
             <!--<dd>尺寸：L</dd>-->
             <div class="add">
-                <input type="text" th:value="${cart.count}"/>
+                <input type="text" th:value="${cart.count}" readonly="readonly"/>
             </div>
-            <h3 th:text="${cart.price}">￥653.00</h3>
+            </span><h3 th:text="'$' + ${cart.price}">￥653.00</h3>
             <small><img src="/taobao/images/shopcar-icon01.png"/></small>
         </dl>
     </section>
