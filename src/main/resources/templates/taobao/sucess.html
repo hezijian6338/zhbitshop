@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>购买成功页面</title>
+    <meta name="keywords" content="KEYWORDS..."/>
+    <meta name="description" content="DESCRIPTION..."/>
+    <meta name="author" content="DeathGhost"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <link rel="icon" href="${ctxPath}/static/wap/images/icon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="${ctxPath}/static/wap/images/icon/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="${ctxPath}/static/wap/images/icon/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="${ctxPath}/static/wap/images/icon/apple-touch-icon-196x196-precomposed.png">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="${ctxPath}/static/wap/css/style.css"/>
+    <script src="${ctxPath}/static/wap/js/jquery.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/taobao/css/loaders.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/taobao/css/loading.css"/>
+    <link rel="stylesheet" type="text/css" href="/taobao/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/taobao/css/style.css"/>
+    <script src="/taobao/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(window).load(function(){
+            $(".loading").addClass("loader-chanage")
+            $(".loading").fadeOut(300)
+        })
+    </script>
+</head>
+<body>
+<!--header-->
+<header>
+    <a href="javascript:history.go(-1);" class="iconfont backIcon">&#60;</a>
+    <h1>购买成功页面</h1>
+</header>
+<div style="height:1rem;"></div>
+<mark class="notFound">恭喜你哦 购买成功！！！</mark>
+<div style="height:1.2rem;"></div>
+<footer class="page-footer fixed-footer">
+    <ul>
+        <li>
+            <a href="/taobao/">
+                <img src="/taobao/images/footer001.png"/>
+                <p>首页</p>
+            </a>
+        </li>
+        <li>
+            <a href="/taobao/person/typelist">
+                <img src="/taobao/images/footer002.png"/>
+                <p>分类</p>
+            </a>
+        </li>
+        <li>
+            <a href="/taobao/person/cartList">
+                <img src="/taobao/images/footer003.png"/>
+                <p>购物车</p>
+            </a>
+        </li>
+        <li>
+            <a href="person">
+                <img src="/taobao/images/footer004.png"/>
+                <p>个人中心</p>
+            </a>
+        </li>
+    </ul>
+</footer>
+<!--@layout("/wap/layout/footNav.html"){}-->
+<!--<script>-->
+<!--document.oncontextmenu=new Function("event.returnValue=false;");-->
+<!--document.onselectstart=new Function("event.returnValue=false;"); -->
+<!--</script>-->
+
+</body>
+</html>

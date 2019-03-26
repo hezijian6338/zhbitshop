@@ -116,8 +116,10 @@
                 dataType: "json",
                 success:function(data) {
                     if(data.code==0){
+                        console.log("来到这里了宝贝！！");
                         window.location.href = "/taobao/person"
                     }else{
+                        console.log("Hello boy!");
                         layer.msg(data.msg);
                     }
                 }

@@ -468,7 +468,7 @@ public class TaoBaoPersonController {
         ModelAndView model = new ModelAndView("/taobao/shopcar");
         //如果member为空 转入登录页面
         if (member == null) {
-            ModelAndView model1 = new ModelAndView("taobao/login");
+            ModelAndView model1 = new ModelAndView("/taobao/login");
             return model1;
         }
         if (MemberUtils.getSessionLoginUser() != null) {
@@ -499,7 +499,7 @@ public class TaoBaoPersonController {
 
         //如果member为空 转入登录页面
         if (member == null) {
-            ModelAndView model1 = new ModelAndView("taobao/login");
+            ModelAndView model1 = new ModelAndView("/taobao/login");
             return model1;
         }
         //登录后开始跳转到相关的支付页面
@@ -528,7 +528,7 @@ public class TaoBaoPersonController {
 //      List<LikbuyDO> likbuyDOList = likbuyService.list(params);
 //      mav.addObject("likbuyDoList", likbuyDOList);
 //      mav.addObject("goods", tGoodsService.get(TGoodsId));
-        mav.setViewName("taobao/buy");
+        mav.setViewName("/taobao/buy");
         return mav;
     }
 
@@ -539,24 +539,31 @@ public class TaoBaoPersonController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("submitOrder")
-    public ModelAndView submitOrder(@RequestParam(value = "productId") Long productId,
-                                    @RequestParam(value = "addressid") Long addressid,
-                                    @RequestParam(value = "paymentid") Long paymentid,
-                                    @RequestParam(value = "paymentid", defaultValue = "无留言") String usercontent
+    @RequestMapping("SubmitOrder")
+    public
+    @ResponseBody
+    R submitOrder(@RequestParam(value = "productId") Long productId,
+                                    @RequestParam(value = "addressId") Long addressId,
+                                    @RequestParam(value = "totalCount") int totalCount,
+                                    @RequestParam(value = "userContet") String userContet
     ) throws Exception {
-        ModelAndView mav = new ModelAndView();
+        R r = new R();
         TMemberDO m = MemberUtils.getSessionLoginUser();
-        TOrderDO order = orderService.insertWapOrder(productId, addressid, paymentid, usercontent, m.getId(), m.getUsername());
-
+//        TOrderDO order = orderService.insertWapOrder(productId, addressid, paymentid, usercontent, m.getId(), m.getUsername());
+        //paymentid is not sure
+        //userContent is not sure
+        TOrderDO order = orderService.insertWapOrder(productId, addressId, productId, userContet, m.getId(), m.getUsername(), totalCount);
         if (order == null) {
-            mav.setViewName("taobao/forwad");
+//            ModelAndView mav = new ModelAndView("/taobao/forwad");
+//            mav.addObject("order", order);
+//            return mav;
+            return r.error("订单错误了！！");
         } else {
-            mav.setViewName("taobao/success");
+//            ModelAndView mav1 = new ModelAndView("/taobao/sucess");
+//            mav1.addObject("order", order);
+//            return mav1;
+            return r;
         }
-
-        mav.addObject("order", order);
-        return mav;
     }
 
 
@@ -572,7 +579,7 @@ public class TaoBaoPersonController {
         ModelAndView mav = new ModelAndView();
         TGoodsDO b = tGoodsService.get(id);
         mav.addObject("TGoods", b);
-        mav.setViewName("taobao/order");
+        mav.setViewName("/taobao/order");
         return mav;
     }
 
@@ -588,7 +595,7 @@ public class TaoBaoPersonController {
         ModelAndView mav = new ModelAndView();
         TGoodsDO b = tGoodsService.get(id);
         mav.addObject("TGoods", b);
-        mav.setViewName("taobao/orderinfo");
+        mav.setViewName("/taobao/orderinfo");
         return mav;
     }
 
@@ -604,7 +611,7 @@ public class TaoBaoPersonController {
         ModelAndView mav = new ModelAndView();
         TGoodsDO b = tGoodsService.get(id);
         mav.addObject("TGoods", b);
-        mav.setViewName("taobao/orderinfo");
+        mav.setViewName("/taobao/orderinfo");
         return mav;
     }
 
@@ -735,9 +742,10 @@ public class TaoBaoPersonController {
     }
 
 
-    @RequestMapping(value = "/save-address", method = RequestMethod.POST)
-    public @ResponseBody
-    ModelAndView saveAddress(
+    @RequestMapping(value = "/save-address")
+    public
+    @ResponseBody
+    R saveAddress(
             @RequestParam(value = "username", required = true) String username,
             @RequestParam(value = "userphone", required = true) String userphone,
             @RequestParam(value = "provinceUser", required = true) String provinceUser,
@@ -745,7 +753,7 @@ public class TaoBaoPersonController {
             @RequestParam(value = "distUser", required = true) String distUser,
             @RequestParam(value = "detailArea", required = true) String detailArea, HttpServletRequest request
     ) {
-
+        R r = new R();
         String detail = provinceUser + cityUser + distUser + detailArea;
         AddressDO addressDO = new AddressDO();
         addressDO.setName(username);
@@ -753,19 +761,18 @@ public class TaoBaoPersonController {
         addressDO.setMobile(userphone);
         addressDO.setDetail(detail);
         addressDO.setIsdefault(1);
-        ModelAndView model = new ModelAndView("/taobao/person");
 
         try {
             HttpSession session = request.getSession();
             int result = addressService.save(addressDO);
             if (result != 1) {
-                return model;
+                return r;
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return model;
+            return r;
         }
-        return model;
+        return r;
     }
 
 

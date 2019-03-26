@@ -51,6 +51,7 @@
                 <span><img src="/taobao/images/map-icon.png"/></span>
                 <dl>
                     <dt>
+                        <b id="userId" th:text="${user.id}" hidden></b>
                         <b th:text="${user.username}">瑾晨</b>
                         <strong th:text="${user.phone}">13035059860</strong>
                     </dt>
@@ -74,10 +75,11 @@
                 </div>
                 <dl>
                     <dt>
-                        <b th:text="${user.username}">瑾晨</b>
+                        <b id="userName" th:text="${user.username}">瑾晨</b>
                         <strong th:text="${user.phone}">13035059860</strong>
                     </dt>
                     <dd id="askChoose" th:text="${address.detail}"></dd>
+                    <dd id="addressID" th:text="${address.id}" hidden></dd>
                     <dd id="showAddress" style="display: none;"></dd>
                 </dl>
                 <!--<h3><a href="/taobao/person/go-address"><img src="/taobao/images/write.png"/></a></h3>-->
@@ -89,6 +91,7 @@
                 <figure>
                     <img th:src="@{'/upload/tgoods/'+${goods.img}}"/>
                 </figure>
+                <span id="productID" th:text="${goods.id}" hidden></span>
                 <h3 th:text="${goods.title}">超级大品牌服装，现在够买只要998</h3>
                 <span th:text="${goods.typename}"></span>
                 <br/>
@@ -96,7 +99,7 @@
                 <br/>
                 <small>¥</small>&nbsp;<b th:text="${goods.prices}">￥32.00</b>
                 <br/>
-                <small>x</small>&nbsp;<b th:text="${account}">×3</b>
+                <small>x</small>&nbsp;<b id="totalCount" th:text="${account}">×3</b>
             </ul>
             <dl>
                 <dd>
@@ -105,10 +108,10 @@
                 </dd>
                 <dd>
                     <span>商品总额</span>
-                    <small>¥</small>&nbsp;<small th:text="${sum}">￥98.00</small>
+                    <small>¥</small>&nbsp;<small id="totalPrice" th:text="${sum}">￥98.00</small>
                 </dd>
                 <dt>
-                    <textarea rows="4" placeholder="给卖家留言（50字以内）"></textarea>
+                    <textarea id="userContet" rows="4" placeholder="给卖家留言（50字以内）"></textarea>
                 </dt>
             </dl>
         </div>
@@ -121,10 +124,10 @@
 <footer class="buy-footer fixed-footer">
     <p>
         <small>总金额</small>
-        <b>￥98.00</b>
+        <small>¥</small>&nbsp;<b th:text="${sum}">￥32.00</b>
     </p>
 
-    <input type="button" value="去付款"/>
+    <input type="button" value="去付款" onclick="goToBuy()"/>
 </footer>
 
 <script type="text/javascript">
@@ -135,6 +138,40 @@
             $(".to-now .tonow label").addClass("ton")
         }
     });
+
+    function goToBuy() {
+        // go to java function and save the data, moreover, this function will go to the page which displays the goods which status is bought
+        var totalPrice = document.getElementById("totalPrice").textContent;// total price
+        var totalCount = document.getElementById("totalCount").textContent;//total count
+        var productId = document.getElementById("productID").textContent;//productID
+        var addressId = document.getElementById("addressID").textContent; // Address ID
+        var userContet = document.getElementById("userContet").textContent;//Usercontent
+        console.log(totalPrice + "!!!!" + totalCount + "@@@@" + productId + "****" + addressId + "####" + userContet)
+        console.log(userContet)
+        //post the value to java
+        $.ajax({
+            type: "post",
+            url: '/taobao/person/SubmitOrder',
+            data: {
+                productId: productId,
+                addressId: addressId,
+                userContet: userContet,
+                totalCount: totalCount,
+                totalPrice: totalPrice
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 0) {
+                    //go to the status page
+//                    layer.msg(data.msg);
+                    console.log("成功了宝贝！！")
+                    window.location.href = "/taobao/sucess"
+                } else {
+                    layer.msg(data.msg);
+                }
+            }
+        });
+    }
 
     function DisplayAddress() {
         //Display the other address
@@ -159,6 +196,8 @@
         var content = document.getElementById(index).textContent
         document.getElementById("showAddress").style.display = ""
         document.getElementById("askChoose").style.display = "none"
+        document.getElementById("addressID").textContent = index
+        console.log(index)
         document.getElementById("showAddress").textContent = content
     }
 

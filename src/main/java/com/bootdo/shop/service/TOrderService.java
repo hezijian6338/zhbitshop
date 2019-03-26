@@ -28,5 +28,5 @@ public interface TOrderService {
 	
 	int batchRemove(Long[] ids);
 
-    TOrderDO insertWapOrder(Long productId, Long addressid, Long paymentid, String usercontent, Long id, String username);
+    TOrderDO insertWapOrder(Long productId, Long addressid, Long paymentid, String usercontent, Long id, String username, int totalCount);
 }

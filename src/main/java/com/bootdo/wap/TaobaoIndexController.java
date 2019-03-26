@@ -468,4 +468,14 @@ public class TaobaoIndexController {
         }
         return R.ok();
     }
+
+    @RequestMapping("/sucess")
+    public ModelAndView sucess() {
+        ModelAndView model = new ModelAndView("/taobao/sucess");
+//        Article article=articleService.selectByPrimaryKey(id);
+//        model.addObject("article", article);
+//        List<Article> articleList=articleService.select(new Article());
+//        model.addObject("articleList", articleList);
+        return model;
+    }
 }

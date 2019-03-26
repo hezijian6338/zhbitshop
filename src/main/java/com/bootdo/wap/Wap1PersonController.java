@@ -377,7 +377,8 @@ public class Wap1PersonController {
 				)throws Exception{
 			ModelAndView mav=new ModelAndView();
 			TMemberDO m =MemberUtils.getSessionLoginUser();
-			TOrderDO order=orderService.insertWapOrder(productId,addressid,paymentid,usercontent,m.getId(),m.getUsername());
+			int i = 0;
+			TOrderDO order=orderService.insertWapOrder(productId,addressid,paymentid,usercontent,m.getId(),m.getUsername(),i);
 			
 			 if(order==null){
 				 mav.setViewName("wap/forwad.html");

@@ -64,7 +64,7 @@ public class TOrderServiceImpl implements TOrderService {
 	}
 
 	@Override
-	public TOrderDO insertWapOrder(Long productId, Long addressid, Long paymentid, String usercontent, Long id, String username) {
+	public TOrderDO insertWapOrder(Long productId, Long addressid, Long paymentid, String usercontent, Long id, String username,int totalCount) {
 		TOrderDO order=new TOrderDO();
 		TGoodsDO p =tGoodsDao.get(productId);
 		order.setOrdersn(RandomString.generateRandomString(8));
@@ -75,7 +75,7 @@ public class TOrderServiceImpl implements TOrderService {
 		order.setPaymentid(paymentid);
 		order.setUsercontent(usercontent);
 		order.setAddressid(addressid);
-		order.setTotalcount(1);
+		order.setTotalcount(totalCount);
 		order.setTotalprice(BigDecimal.valueOf(Double.valueOf(p.getPrices())));
 		tOrderDao.save(order);
 
