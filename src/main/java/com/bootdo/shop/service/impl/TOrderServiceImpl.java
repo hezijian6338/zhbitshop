@@ -1,8 +1,10 @@
 package com.bootdo.shop.service.impl;
 
 import com.bootdo.common.utils.RandomString;
+import com.bootdo.shop.dao.TGoodSorderDao;
 import com.bootdo.shop.dao.TGoodsDao;
 import com.bootdo.shop.dao.TOrderLogDao;
+import com.bootdo.shop.domain.TGoodSorderDO;
 import com.bootdo.shop.domain.TGoodsDO;
 import com.bootdo.shop.domain.TOrderLogDO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,8 @@ public class TOrderServiceImpl implements TOrderService {
 	private TOrderLogDao tOrderLogDao;
 	@Autowired
 	private TGoodsDao tGoodsDao;
+	@Autowired
+	private TGoodSorderDao tGoodSorderDao;
 	
 	@Override
 	public TOrderDO get(Long id){
@@ -78,6 +82,15 @@ public class TOrderServiceImpl implements TOrderService {
 		order.setTotalcount(totalCount);
 		order.setTotalprice(BigDecimal.valueOf(Double.valueOf(p.getPrices())));
 		tOrderDao.save(order);
+
+		TGoodSorderDO tGoodSorderDO = new TGoodSorderDO();
+		tGoodSorderDO.setCount(totalCount);
+		tGoodSorderDO.setGoodsid(productId);
+		tGoodSorderDO.setOrderid(order.getId());
+		tGoodSorderDO.setImg(p.getImg());
+		tGoodSorderDO.setGoodsname(p.getTitle());
+		tGoodSorderDO.setPrice(String.valueOf(totalCount * Integer.parseInt(p.getPrices())));
+		tGoodSorderDao.save(tGoodSorderDO);
 
 		TOrderLogDO log=new TOrderLogDO();
 		log.setOrderId(order.getId());

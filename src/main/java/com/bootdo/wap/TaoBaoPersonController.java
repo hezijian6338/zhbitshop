@@ -249,6 +249,8 @@ public class TaoBaoPersonController {
             System.out.println(tOrderList.get(i).getId());
             params.clear();
             params.put("orderid", orderDO.getId());
+//            params.put("id",orderDO.getPaymentid());
+//
             List<TGoodSorderDO> gs = tGoodSorderService.list(params);
             orderDO.setGoodsList(gs);
             ++i;

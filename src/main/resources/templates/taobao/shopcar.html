@@ -35,7 +35,8 @@
 </header>
 
 <div class="contaniner fixed-contb">
-    <section class="shopcar" th:each="cart:${cartList}">
+    <section class="shopcar" th:each="cart:${cartList}" >
+        <a th:href="@{'/taobao/person/LikBuy/' + ${cart.goodsid}} + '/' + ${cart.count}">
         <div class="shopcar-checkbox">
             <!--<label for="shopcar" onselectstart="return false"></label>-->
             <input type="checkbox" id="shopcar"/>
@@ -51,6 +52,7 @@
             </span><h3 th:text="'$' + ${cart.price}">￥653.00</h3>
             <small><img src="/taobao/images/shopcar-icon01.png"/></small>
         </dl>
+        </a>
     </section>
     <!--去结算-->
     <div style="margin-bottom: 16%;"></div>
