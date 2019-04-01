@@ -44,6 +44,7 @@
 			<dl th:each="order:${tOrderList}">
 				<dt>
 					<time th:text="${order.createdate}">2015-11-15 22:55:59</time>
+					<textarea id="oderID" th:text="${order.id}" hidden="hidden"></textarea>
 					<span>待发货</span>
 				</dt>
 				<ul th:each="goods:${order.goodsList}">
@@ -65,7 +66,7 @@
 				<dd>
 					<!--<input type="button" value="确认收货" class="order-que"/>-->
 					<input type="button" value="查看物流" onclick="javascript:location.href='/taobao/person/wuliu'" />
-					<input type="button" value="取消订单" />
+					<input type="button" value="取消订单" onclick="cancel()" />
 				</dd>
 			</dl>
 		</section>
@@ -143,4 +144,28 @@
 	
 
 </body>
+<script>
+    function cancel(){
+//        var oderID=$("#oderID").val();
+        var oderID = document.getElementById("oderID").value;
+        console.log(oderID);
+        $.ajax({
+            type: "post",
+            url: '/taobao/person/cancel',
+            data: {
+                oderID:oderID,
+            },
+            dataType: "json",
+            success:function(data) {
+                if(data.code==0){
+                    console.log("来到这里了宝贝！！");
+                    window.location.href = "/taobao/sucess"
+                }else{
+                    console.log("Hello boy!");
+                    layer.msg(data.msg);
+                }
+            }
+        });
+    }
+</script>
 </html>

@@ -35,28 +35,29 @@
 </header>
 
 <div class="contaniner fixed-contb">
-    <section class="shopcar" th:each="cart:${cartList}" >
-        <a th:href="@{'/taobao/person/LikBuy/' + ${cart.goodsid}} + '/' + ${cart.count}">
-        <div class="shopcar-checkbox">
-            <!--<label for="shopcar" onselectstart="return false"></label>-->
-            <input type="checkbox" id="shopcar"/>
-        </div>
-        <figure><img th:src="@{'/upload/project/'+${cart.img}}"/></figure>
-        <dl>
-            <dt th:text="${cart.goodsname}">超级大品牌服装，现在买只要998</dt>
-            <!--<dd>颜色：经典绮丽款</dd>-->
-            <!--<dd>尺寸：L</dd>-->
-            <div class="add">
-                <input type="text" th:value="${cart.count}" readonly="readonly"/>
+    <section class="shopcar" th:each="cart:${cartList}">
+        <textarea id="cartID" th:text="${cart.id}" hidden="hidden"></textarea>
+        <a th:href="@{'/taobao/person/LikBuy/' + ${cart.goodsid} + '/' + ${cart.count}}">
+            <div class="shopcar-checkbox">
+                <!--<label for="shopcar" onselectstart="return false"></label>-->
+                <input type="checkbox" id="shopcar"/>
             </div>
-            </span><h3 th:text="'$' + ${cart.price}">￥653.00</h3>
-            <small><img src="/taobao/images/shopcar-icon01.png"/></small>
-        </dl>
+            <figure><img th:src="@{'/upload/project/'+${cart.img}}"/></figure>
+            <dl>
+                <dt th:text="${cart.goodsname}">超级大品牌服装，现在买只要998</dt>
+                <!--<dd>颜色：经典绮丽款</dd>-->
+                <!--<dd>尺寸：L</dd>-->
+                <div class="add">
+                    <input type="text" th:value="${cart.count}" readonly="readonly"/>
+                </div>
+                </span><h3 th:text="'$' + ${cart.price}">￥653.00</h3>
+                <small><img src="/taobao/images/shopcar-icon01.png" onclick="cancel()"/></small>
+            </dl>
         </a>
+
     </section>
     <!--去结算-->
     <div style="margin-bottom: 16%;"></div>
-
 </div>
 <script type="text/javascript">
     $(".shopcar-checkbox label").on('touchstart', function () {
@@ -98,4 +99,28 @@
 </footer>
 <!--<div th:replace="taobao/layout/footNav"></div>-->
 </body>
+<script>
+    function cancel() {
+        //清楚购物车
+        var cartID = document.getElementById("cartID").value;
+        console.log(cartID);
+        $.ajax({
+            type: "post",
+            url: '/taobao/person/cancelShopcar',
+            data: {
+                cartID: cartID,
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 0) {
+                    console.log("来到这里了宝贝！！");
+                    window.location.href = "/taobao/sucess"
+                } else {
+                    console.log("Hello boy!");
+                    layer.msg(data.msg);
+                }
+            }
+        });
+    }
+</script>
 </html>

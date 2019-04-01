@@ -13,6 +13,8 @@
     	$(window).load(function(){
     		$(".loading").addClass("loader-chanage")
     		$(".loading").fadeOut(300)
+			var original = document.getElementById("price").value + 20;
+			document.getElementById("originalPrice").value = original;
     	})
     </script>
 </head>
@@ -36,7 +38,7 @@
 			</a>
 		<h3>品牌专区</h3>
 			
-			<a class="iconb" href="shopcar.html">
+			<a class="iconb" href="/taobao/person/cartList">
 				<img src="/taobao/images/shopbar.png"/>
 			</a>
 	</header>
@@ -78,7 +80,7 @@
 					<a th:href="@{'/taobao/goodsDetail/' + ${goods.id}}">
 						<img th:src="@{'/upload/goods/'+${goods.img}}"/>
 						<p th:text="${goods.title}">韩版青少年休闲修身长袖紧身衬衫</p>
-						<b th:text="${goods.prices}">￥58</b><del>￥538</del>
+						<b id="price" th:text="'$' + ${goods.prices}">￥58</b><del id="originalPrice"></del>
 					</a>
 				</li>
 				<!--<li class="pic">-->

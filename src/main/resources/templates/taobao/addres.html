@@ -1,63 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-         <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
     <title>地址管理</title>
     <link rel="stylesheet" type="text/css" href="/taobao/css/loaders.min.css"/>
     <link rel="stylesheet" type="text/css" href="/taobao/css/loading.css"/>
     <link rel="stylesheet" type="text/css" href="/taobao/css/base.css"/>
     <link rel="stylesheet" type="text/css" href="/taobao/css/style.css"/>
-     <script src="/taobao/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/taobao/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-    	$(window).load(function(){
-    		$(".loading").addClass("loader-chanage")
-    		$(".loading").fadeOut(300)
-    	})
+        $(window).load(function () {
+            $(".loading").addClass("loader-chanage")
+            $(".loading").fadeOut(300)
+        })
     </script>
 </head>
 <!--loading页开始-->
 <div class="loading">
-	<div class="loader">
+    <div class="loader">
         <div class="loader-inner pacman">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-	</div>
+    </div>
 </div>
 <!--loading页结束-->
 <body>
-	<header class="top-header fixed-header">
-		<a class="icona" href="javascript:history.go(-1)">
-				<img src="/taobao/images/left.png"/>
-			</a>
-		<h3>地址</h3>
-			
-			<a class="text-top" href="go-address">
-				添加
-			</a>
-	</header>
-	
-	<div class="contaniner fixed-conta">
-		<dl class="address" th:each="address:${addressList}">
-			<a href="go-address.html">
-				<dt>
-					<p th:text="${address.name}">瑾晨</p>
-					<span th:text="${address.mobile}">13035059860</span>
-					<small>默认</small>
-				</dt>
-				<dd th:text="${address.detail}">安徽省合肥市XXXXXXXX</dd>
-			</a>
-		</dl>
-	</div>
-	
-	
-	
-	
+<header class="top-header fixed-header">
+    <a class="icona" href="javascript:history.go(-1)">
+        <img src="/taobao/images/left.png"/>
+    </a>
+    <h3>地址</h3>
+
+    <a class="text-top" href="go-address">
+        添加
+    </a>
+</header>
+
+<div class="contaniner fixed-conta">
+    <dl class="address" th:each="address:${addressList}">
+        <dt>
+            <textarea id="addressID" th:text="${address.id}" hidden="hidden"></textarea>
+            <p th:text="${address.name}">瑾晨</p>
+            <span th:text="${address.mobile}">13035059860</span>
+            <small>默认</small>
+        </dt>
+        <dd th:text="${address.detail}">安徽省合肥市XXXXXXXX</dd>
+        <dd><img src="/taobao/images/shopcar-icon01.png" onclick="cancel()"/></dd>
+    </dl>
+</div>
+
 
 </body>
+<script>
+    function cancel() {
+        //清楚地址
+        var addressID = document.getElementById("addressID").value;
+        console.log(addressID);
+        $.ajax({
+            type: "post",
+            url: '/taobao/person/cancelAddress',
+            data: {
+                addressID: addressID,
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 0) {
+                    console.log("来到这里了宝贝！！");
+                    window.location.href = "/taobao/sucess"
+                } else {
+                    console.log("Hello boy!");
+                    layer.msg(data.msg);
+                }
+            }
+        });
+    }
+</script>
 </html>

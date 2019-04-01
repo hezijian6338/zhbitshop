@@ -833,7 +833,7 @@ public class TaoBaoPersonController {
     @RequestMapping("cancel")
     public
     @ResponseBody
-    R submitDatum(@RequestParam(value = "oderID") Long oderID
+    R Cancel(@RequestParam(value = "oderID") Long oderID
     ) throws Exception {
         R r = new R();
         TOrderDO tOrderDO = orderService.get(oderID);
@@ -851,6 +851,41 @@ public class TaoBaoPersonController {
         tGoodSorderService.remove(tGoodSorderDO.get(0).getId());
         tOrderLogService.remove(tOrderLogDOS.get(0).getId());
 //        System.out.println(oderID + "*********");
+        return r;
+    }
+
+
+    /**
+     * 取消购物车
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("cancelShopcar")
+    public
+    @ResponseBody
+    R cancelShopcar(@RequestParam(value = "cartID") Long cartID
+    ) throws Exception {
+        R r = new R();
+        tCartService.remove(cartID);
+        return r;
+    }
+
+    /**
+     * 取消地址
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("cancelAddress")
+    public
+    @ResponseBody
+    R cancelAddress(@RequestParam(value = "addressID") Long addressID
+    ) throws Exception {
+        R r = new R();
+        addressService.remove(addressID);
         return r;
     }
 }
