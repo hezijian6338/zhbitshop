@@ -38,6 +38,8 @@ import java.util.Map;
 @RequestMapping("/taobao/person")
 public class TaoBaoPersonController {
     @Autowired
+    private TOrderLogService tOrderLogService;
+    @Autowired
     private AddressService addressService;
     @Autowired
     private FavoriteService favoriteService;
@@ -818,6 +820,37 @@ public class TaoBaoPersonController {
         m.setEmail(userMail);
         m.setPhone(userphone);
         tMemberService.update(m);
+        return r;
+    }
+
+    /**
+     * 取消订单
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("cancel")
+    public
+    @ResponseBody
+    R submitDatum(@RequestParam(value = "oderID") Long oderID
+    ) throws Exception {
+        R r = new R();
+        TOrderDO tOrderDO = orderService.get(oderID);
+        tOrderDO.setStatus(0);
+
+        Map<String, Object> param = new HashMap<>();
+        param.put("orderid", oderID);
+        List<TGoodSorderDO> tGoodSorderDO = tGoodSorderService.list(param);
+
+        Map<String, Object> param1 = new HashMap<>();
+        param.put("order_id", oderID);
+        List<TOrderLogDO> tOrderLogDOS = tOrderLogService.list(param1);
+
+        orderService.remove(oderID);
+        tGoodSorderService.remove(tGoodSorderDO.get(0).getId());
+        tOrderLogService.remove(tOrderLogDOS.get(0).getId());
+//        System.out.println(oderID + "*********");
         return r;
     }
 }
