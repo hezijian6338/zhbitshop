@@ -189,6 +189,7 @@ public class TaoBaoPersonController {
         return model;
     }
 
+
     /**
      * 安全管理
      *
@@ -790,5 +791,33 @@ public class TaoBaoPersonController {
         model.addObject("goodslist", goodslist);
 //        model.addObject("member", member);
         return model;
+    }
+
+
+    /**
+     * 修改个人资料
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("save-datum")
+    public
+    @ResponseBody
+    R submitDatum(@RequestParam(value = "username") String username,
+                  @RequestParam(value = "usersex") String usersex,
+                  @RequestParam(value = "userqq") String userqq,
+                  @RequestParam(value = "userMail") String userMail,
+                  @RequestParam(value = "userphone") String userphone
+    ) throws Exception {
+        R r = new R();
+        TMemberDO m = MemberUtils.getSessionLoginUser();
+        m.setUsername(username);
+        m.setSex(usersex);
+        m.setQq(userqq);
+        m.setEmail(userMail);
+        m.setPhone(userphone);
+        tMemberService.update(m);
+        return r;
     }
 }

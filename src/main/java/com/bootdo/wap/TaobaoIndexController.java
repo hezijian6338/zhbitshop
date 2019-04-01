@@ -364,6 +364,18 @@ public class TaobaoIndexController {
         return "/taobao/register";
     }
 
+    /**
+     * 跳转到登录页面
+     *
+     * @return
+     */
+    @RequestMapping(value = "updateDatum")
+    public ModelAndView updateDatum() {
+        ModelAndView model = new ModelAndView("/taobao/updateDatum");
+        return model;
+    }
+
+
     @RequestMapping(value = "reg", method = RequestMethod.POST)
     public @ResponseBody
     Map<String, Object> reg(

@@ -53,14 +53,14 @@
 							<p th:text="${goods.goodsname}">超级大品牌服装，现在够级大品牌服装，现在够买只要998</p>
 							<small>颜色：经典绮丽款</small>
 							<span>尺寸：XL</span>
-							<b th:text="${goods.price}">￥32.00</b>
+							<b th:text="'$' + ${goods.price}">￥32.00</b>
 							<strong th:text="'×'+${goods.count}">×3</strong>
 						</li>
 					</a>
 				</ul>
 				<dd>
 					<h3>商品总额</h3>
-					<i th:text="${order.totalprice}">￥98.00</i>
+					<i th:text="'$' + ${order.totalprice}">￥98.00</i>
 				</dd>
 				<dd>
 					<input type="button" value="确认收货" class="order-que"/>
