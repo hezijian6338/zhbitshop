@@ -73,7 +73,7 @@ public class TOrderServiceImpl implements TOrderService {
 		TGoodsDO p =tGoodsDao.get(productId);
 		order.setOrdersn(RandomString.generateRandomString(8));
 		order.setCreatedate(new Date());
-		order.setStatus(1);
+		order.setStatus(9);
 		order.setUserid(id);
 		order.setUsername(username);
 		order.setPaymentid(paymentid);

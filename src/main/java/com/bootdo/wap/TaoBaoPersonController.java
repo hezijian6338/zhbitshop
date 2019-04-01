@@ -888,4 +888,43 @@ public class TaoBaoPersonController {
         addressService.remove(addressID);
         return r;
     }
+
+    /**
+     * 取消地址
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("buyChangeStatus")
+    public
+    @ResponseBody
+    R buyChangeStatus(@RequestParam(value = "oderID") Long oderID
+    ) throws Exception {
+        R r = new R();
+        TOrderDO tOrderDO =  orderService.get(oderID);
+        tOrderDO.setStatus(1);
+        orderService.update(tOrderDO);
+        return r;
+    }
+
+    /**
+     * 确认收货
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("sureChangeStatus")
+    public
+    @ResponseBody
+    R sureChangeStatus(@RequestParam(value = "oderID") Long oderID
+    ) throws Exception {
+        R r = new R();
+        TOrderDO tOrderDO =  orderService.get(oderID);
+        tOrderDO.setStatus(3);
+        orderService.update(tOrderDO);
+        return r;
+    }
+
 }

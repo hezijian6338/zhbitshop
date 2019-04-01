@@ -45,7 +45,7 @@
 			<dl th:each="order:${tOrderList}">
 				<dt>
 					<time th:text="${order.createdate}">2015-11-15 22:55:59</time>
-					<span>待发货</span>
+					<span>待收货</span>
 				</dt>
 				<ul th:each="goods:${order.goodsList}">
 					<a th:href="@{'/taobao/goodsDetail/'+${goods.id}}">
@@ -64,7 +64,7 @@
 					<i th:text="'$' + ${order.totalprice}">￥98.00</i>
 				</dd>
 				<dd>
-					<input type="button" value="确认收货" class="order-que"/>
+					<input type="button" value="确认收货" class="order-que" onclick="sureStatus()"/>
 					<input type="button" value="查看物流" onclick="javascript:location.href='/taobao/person/wuliu'" />
 					<!--<input type="button" value="取消订单" />-->
 				</dd>
@@ -77,4 +77,28 @@
 	
 
 </body>
+<script>
+    function sureStatus(){
+//        var oderID=$("#oderID").val();
+        var oderID = document.getElementById("oderID").value;
+        console.log(oderID);
+        $.ajax({
+            type: "post",
+            url: '/taobao/person/sureChangeStatus',
+            data: {
+                oderID:oderID,
+            },
+            dataType: "json",
+            success:function(data) {
+                if(data.code==0){
+                    console.log("来到这里了宝贝！！");
+                    window.location.href = "/taobao/sucess"
+                }else{
+                    console.log("Hello boy!");
+                    layer.msg(data.msg);
+                }
+            }
+        });
+    }
+</script>
 </html>
