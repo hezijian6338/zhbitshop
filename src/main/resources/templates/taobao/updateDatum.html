@@ -38,16 +38,14 @@
         <img src="/taobao/images/left.png"/>
     </a>
     <h3>我的资料</h3>
-    <a class="iconb" href="shopcar.html">
-    </a>
-    <a class="text" href="/taobao/updateDatum">编辑资料</a>
+
 </header>
 
 <div class="contaniner">
     <ul class="self-data">
         <li>
             <p>昵称: </p>
-            <textarea type="text" id="username" value="" required="required"/>
+            <input type="text" id="username" value="" required="required"/>
         </li>
         <li>
             <p>性别: </p>
@@ -59,48 +57,63 @@
         </li>
         <li>
             <p>QQ: </p>
-            <textarea id="userqq" type="text" value=""/>
+            <input id="userqq" type="text" value=""/>
         </li>
         <li>
             <p>邮箱: </p>
-            <textarea id="userMail" type="text" value=""/>
+            <input id="userMail" type="text" value=""/>
         </li>
         <li>
             <p>电话: </p>
-            <textarea id="userphone" type="text" value=""/>
+            <input id="userphone" type="text" value=""/>
         </li>
     </ul>
     <input type="submit" onclick="save()" value="保存"/>
 </div>
 <script src="/taobao/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+
     function save() {
         var username = $("#username").val();
         var usersex = $("#usersex").val();
         var userqq = $("#userqq").val();
         var userMail = $("#userMail").val();
         var userphone = $("#userphone").val();
-        $.ajax({
-            type: "post",
-            url: '/taobao/person/save-datum',
-            data: {
-                username: username,
-                usersex: usersex,
-                userqq: userqq,
-                userMail: userMail,
-                userphone: userphone
-            },
-            dataType: "json",
-            success: function (data) {
-                if (data.code == 0) {
-                    console.log("来到这里了宝贝！！");
-                    window.location.href = "/taobao/sucess"
-                } else {
-                    console.log("Hello boy!");
-                    layer.msg(data.msg);
+
+        var flag = 0 ;
+
+        var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/
+        var re1 = /^1\d{10}$/
+
+        if ((re1.test(userphone)) && (re.test(userMail))) {
+            flag = 1;
+        }
+
+        if(flag == 1) {
+            $.ajax({
+                type: "post",
+                url: '/taobao/person/save-datum',
+                data: {
+                    username: username,
+                    usersex: usersex,
+                    userqq: userqq,
+                    userMail: userMail,
+                    userphone: userphone
+                },
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 0) {
+                        console.log("来到这里了宝贝！！");
+                        window.location.href = "/taobao/sucess"
+                    } else {
+                        console.log("Hello boy!");
+                        layer.msg(data.msg);
+                    }
                 }
-            }
-        });
+            });
+        }else{
+            alert("请输入正确格式的资料！！");
+        }
     }
 </script>
 <style>

@@ -38,11 +38,12 @@
 <body>
 <!--header-->
 <header>
-    <a href="javascript:history.go(-1);" class="iconfont backIcon">&#60;</a>
+    <!--<a href="javascript:history.go(-1);" class="iconfont backIcon">&#60;</a>-->
     <h1>操作成功页面</h1>
 </header>
-<div style="height:1rem;"></div>
-<mark class="notFound">恭喜你哦 操作成功！！！</mark>
+<center><mark class="notFound">恭喜你哦 操作成功！！！</mark></center>
+<br>
+<center><h1 id="totalSecond">5</h1></center>
 <div style="height:1.2rem;"></div>
 <footer class="page-footer fixed-footer">
     <ul>
@@ -79,4 +80,34 @@
 <!--</script>-->
 
 </body>
+<script language="javascript" type="text/javascript">
+    var second = document.getElementById('totalSecond').textContent;
+
+    if (navigator.appName.indexOf("Explorer") > -1)
+    {
+        second = document.getElementById('totalSecond').innerText;
+    } else
+    {
+        second = document.getElementById('totalSecond').textContent;
+    }
+
+
+    setInterval("redirect()", 1000);
+    function redirect()
+    {
+        if (second < 0)
+        {
+            location.href = "/taobao/person";
+        } else
+        {
+            if (navigator.appName.indexOf("Explorer") > -1)
+            {
+                document.getElementById('totalSecond').innerText = second--;
+            } else
+            {
+                document.getElementById('totalSecond').textContent = second--;
+            }
+        }
+    }
+</script>
 </html>
