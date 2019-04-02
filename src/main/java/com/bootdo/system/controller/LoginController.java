@@ -2,10 +2,12 @@ package com.bootdo.system.controller;
 
 import java.util.List;
 
+import com.bootdo.wap.MemberUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.LogoutAware;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +26,8 @@ import com.bootdo.common.utils.R;
 import com.bootdo.common.utils.ShiroUtils;
 import com.bootdo.system.domain.MenuDO;
 import com.bootdo.system.service.MenuService;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController extends BaseController {
@@ -61,6 +65,8 @@ public class LoginController extends BaseController {
 		Subject subject = SecurityUtils.getSubject();
 		try {
 			subject.login(token);
+			HttpSession session = MemberUtils.getCurRequest().getSession();
+			session.setAttribute("username",username);
 			return R.ok();
 		} catch (AuthenticationException e) {
 			return R.error("用户或密码错误");
