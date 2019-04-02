@@ -414,6 +414,14 @@ public class TaoBaoPersonController {
      */
     @RequestMapping("/typelist")
     public ModelAndView goodsType(HttpServletRequest request) {
+        TMemberDO member = MemberUtils.getSessionLoginUser();
+
+        //如果member为空 转入登录页面
+        if (member == null) {
+            ModelAndView model1 = new ModelAndView("taobao/login");
+            return model1;
+        }
+
         ModelAndView model = new ModelAndView("/taobao/index-bak");
         //从t_goods_class 获取出相关的数据
         Map<String, Object> map = new HashMap<>();

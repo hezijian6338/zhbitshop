@@ -74,7 +74,7 @@
                 <div class="swiper-slide" th:each="banner:${bannerList}">
                     <a th:href="@{'/taobao/bannerDetail/'+${banner.id}}">
                         <img class="swiper-lazy"
-                             th:src="@{'/upload/banner/'+${banner.img}}" alt="">
+                             th:src="@{'/upload/uploaded_files/'+${banner.img}}" alt="">
                     </a>
                 </div>
 
@@ -84,7 +84,7 @@
         <div class="home-nav ui-box">
             <div class="ui-flex flex-justify-sb">
                 <div th:each="banner:${bannerList}">
-                    <a th:href="@{'/taobao/bannerDetail/'+${banner.id}}"><img th:src="@{'/upload/banner/'+${banner.img}}" alt="" /></a>
+                    <a th:href="@{'/taobao/bannerDetail/'+${banner.id}}"><img th:src="@{'/upload/uploaded_files/'+${banner.img}}" alt="" /></a>
                 </div>
 
             </div>

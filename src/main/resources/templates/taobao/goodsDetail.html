@@ -117,7 +117,7 @@
 						同类推荐
 					</span>
                 <li class="one" th:each="g:${typeGoods}">
-                    <img th:src="@{'/upload/project/'+${g.img}}"/>
+                    <img th:src="@{'/upload/uploaded_files/'+${g.img}}"/>
                     <p th:text="'$'+${g.prices}">￥188.00</p>
                 </li>
 

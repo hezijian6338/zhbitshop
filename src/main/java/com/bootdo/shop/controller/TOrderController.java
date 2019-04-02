@@ -50,16 +50,12 @@ public class TOrderController {
     @RequiresPermissions("shop:tOrder:tOrder")
     String TOrder() {
 
-        HttpSession session = getCurRequest().getSession();
-        System.out.println();
-        Map<String, Object> map = new HashMap<>();
-        map.put("username", session.getAttribute("username"));
-        UserDO userDO = userService.list(map).get(0);
-        if (userDO.getroleIds().get(0) == 56) {
-            return "shop/tOrder/tOrder";
-        } else {
-            return "shop/tOrder/tOrder";
-        }
+//        HttpSession session = getCurRequest().getSession();
+//        System.out.println();
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("username", session.getAttribute("username"));
+//        UserDO userDO = userService.list(map).get(0);
+        return "shop/tOrder/tOrder";
     }
 
     public static HttpServletRequest getCurRequest() {

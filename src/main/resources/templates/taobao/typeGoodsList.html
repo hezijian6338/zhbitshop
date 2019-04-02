@@ -76,9 +76,9 @@
 			<ul class="wall" th:each="goods:${goodslist}">
 				<li class="pic">
 					<a th:href="@{'/taobao/goodsDetail/' + ${goods.id}}">
-						<img th:src="@{'/upload/goods/'+${goods.img}}"/>
+						<img th:src="@{'/upload/uploaded_files/'+${goods.img}}"/>
 						<p th:text="${goods.title}">韩版青少年休闲修身长袖紧身衬衫</p>
-						<b th:text="${goods.prices}">￥58</b><del>￥538</del>
+						<b th:text="'$' + ${goods.prices}">￥58</b><del>￥538</del>
 					</a>
 				</li>
 				<!--<li class="pic">-->

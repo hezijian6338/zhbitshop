@@ -1,5 +1,5 @@
 bootdo:
-  uploadPath: /var/uploaded_files/
+  uploadPath: /upload/uploaded_files/
 logging:
   level:
     root: error

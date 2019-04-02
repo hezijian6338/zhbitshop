@@ -49,7 +49,7 @@
 				</dt>
 				<ul th:each="goods:${order.goodsList}">
 					<a th:href="@{'/taobao/goodsDetail/'+${goods.id}}">
-						<figure><img th:src="@{'/upload/project/'+${goods.img}}"/></figure>
+						<figure><img th:src="@{'/upload/uploaded_files/'+${goods.img}}"/></figure>
 						<li>
 							<p th:text="${goods.goodsname}">超级大品牌服装，现在够级大品牌服装，现在够买只要998</p>
 							<small>颜色：经典绮丽款</small>
