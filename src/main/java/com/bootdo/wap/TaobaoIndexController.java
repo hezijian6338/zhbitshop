@@ -237,6 +237,7 @@ public class TaobaoIndexController {
         Query query = new Query(params);
         mav.addObject("typeGoods", tGoodsService.list1(query));
 
+
         String userid = req.getParameter("userid");
         if (StringUtils.isNoneEmpty(userid)) {
             params = new HashMap<>();

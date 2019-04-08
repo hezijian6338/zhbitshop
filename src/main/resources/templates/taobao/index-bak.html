@@ -66,7 +66,7 @@
         <dl th:each="type:${typeList}">
             <dd>
                 <a th:href="@{'/taobao/person/information/'+ ${type.id}}">
-                    <img th:src="@{'/upload/uploaded_files/'+${type.id}}"/>
+                    <img th:src="@{'/upload/uploaded_files/'+${type.id}+'.jpg'}"/>
                     <b th:text="${type.name}">男装</b>
                 </a>
             </dd>

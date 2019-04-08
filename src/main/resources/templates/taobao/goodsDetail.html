@@ -128,12 +128,12 @@
             <nav>
                 <ul class="article">
                     <li id="talkbox1" class="article-active">商品详情</li>
-                    <li id="talkbox2">评价</li>
+                    <!--<li id="talkbox2">评价</li>-->
                 </ul>
             </nav>
 
-            <section class="talkbox1">
-                会尽快啦辅导费发挥大路口
+            <section class="talkbox1" th:text="${goods.summary}">
+
             </section>
 
             <section class="talkbox2" style="display: none;">

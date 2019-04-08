@@ -156,7 +156,7 @@ public class FileController extends BaseController {
 		}
 		String fileName = file.getOriginalFilename();
 //		fileName = FileUtil.RenameToUUID(fileName);
-		FileDO sysFile = new FileDO(FileType.fileType(fileName), "/files/" + fileName, new Date());
+		FileDO sysFile = new FileDO(FileType.fileType(fileName), "/upload/uploaded_files/" + fileName, new Date());
 		try {
 			FileUtil.uploadFile(file.getBytes(), bootdoConfig.getUploadPath(), fileName);
 			System.out.println(bootdoConfig.getUploadPath());
