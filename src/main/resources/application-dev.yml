@@ -7,9 +7,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://134.175.69.74:3306/bootdo?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://hezijian6338.ddns.net:3306/bootdo?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowPublicKeyRetrieval=true
     username: root
-    password: 123456
+    password: 123455
     initialSize: 1
     minIdle: 3
     maxActive: 20
